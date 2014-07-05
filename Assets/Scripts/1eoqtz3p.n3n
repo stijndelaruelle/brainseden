@@ -7,11 +7,11 @@ public class SheepBehaviour : MonoBehaviour
 {
     private float m_Height;
     public float m_JumpHeight = 2.0f;
-    public float m_UpdateTime = 0.0f;
+    public float m_UpdateTime = 0.5f;
     public float m_MinInfluenceRadius = 100.0f;
     public float m_MaxInfluenceRadius = 120.0f;
-    public float m_MinRunDistance = 70.0f;
-    public float m_MaxRunDistance = 100.0f;
+    public float m_MinRunDistance = 10.0f;
+    public float m_MaxRunDistance = 30.0f;
 
     private float m_UpdateTimer;
     private float m_RandomOffset;
@@ -51,7 +51,9 @@ public class SheepBehaviour : MonoBehaviour
                 float moveDist = UnityEngine.Random.Range(m_MinRunDistance, m_MaxRunDistance);
                 if (dist > m_MinInfluenceRadius)
                 {
-                    moveDist *= 1-(Mathf.Clamp(((moveDist - m_MinInfluenceRadius)/(m_MaxInfluenceRadius-m_MinInfluenceRadius)),0,1));
+                    moveDist *=
+                        Mathf.Clamp(((moveDist - m_MinInfluenceRadius)/(m_MaxInfluenceRadius - m_MinInfluenceRadius)), 0,
+                            1);
                 }
                 m_TargetPos = transform.position + (moveDir * moveDist);
             }

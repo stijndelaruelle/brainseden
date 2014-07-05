@@ -42,15 +42,15 @@ Material:
       data:
         first:
           name: _LightSteps
-        second: 7.67999983
+        second: 15
       data:
         first:
           name: _LightContrast
-        second: 3.91000009
+        second: 5
       data:
         first:
           name: _MinLightValue
-        second: .303571433
+        second: 0
     m_Colors:
       data:
         first:
