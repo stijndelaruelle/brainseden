@@ -19,8 +19,8 @@ public class ShepherdBehaviour : MonoBehaviour
         float horizontal = Input.GetAxis("Player1_Horizontal");
         float vertical = Input.GetAxis("Player1_Vertical");
 
-        rigidbody.AddForce(Vector3.right * horizontal * 2000.0f, ForceMode.Acceleration);
-        rigidbody.AddForce(Vector3.forward * vertical * 2000.0f, ForceMode.Acceleration);
+        rigidbody.AddForce(Vector3.right * horizontal * 3000.0f, ForceMode.Acceleration);
+        rigidbody.AddForce(Vector3.forward * vertical * 3000.0f, ForceMode.Acceleration);
 
         transform.LookAt(transform.position + new Vector3(horizontal, 0.0f, vertical));
 	}
