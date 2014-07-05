@@ -28,6 +28,7 @@ public class PlayerSheepBehaviour : MonoBehaviour
         if (Input.GetButtonDown("Player2_Jump") && m_CanJump)
         {
             rigidbody.AddForce(Vector3.up * 10000.0f, ForceMode.Acceleration);
+            m_CanJump = false;
         }
 	}
 
@@ -40,17 +41,7 @@ public class PlayerSheepBehaviour : MonoBehaviour
 
         if (collision.gameObject.tag == "Terrain")
         {
-            Debug.Log("rofl");
             m_CanJump = true;
-        }
-    }
-
-    void OnCollisionLeave(Collision collision)
-    {
-        if (collision.gameObject.tag == "Terrain")
-        {
-            Debug.Log("roflqdqdqd");
-            m_CanJump = false;
         }
     }
 }
