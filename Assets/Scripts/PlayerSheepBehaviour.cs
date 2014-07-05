@@ -6,10 +6,13 @@ public class PlayerSheepBehaviour : MonoBehaviour
 {
     private bool m_CanJump;
 
+    private ScoreManager m_ScoreManager;
+    private bool m_IsRogue = false;
+
 	// Use this for initialization
 	void Start () 
 	{
-	
+        m_ScoreManager = GameObject.Find("Scorebar").GetComponent<ScoreManager>();
 	}
 	
 	// Update is called once per frame
@@ -36,5 +39,25 @@ public class PlayerSheepBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag == "Shepherd") Debug.Log("Fuck i'm dead.");
         if (collision.gameObject.tag == "Terrain")  m_CanJump = true;
+    }
+
+    void OnTriggerEnter(Collider collision)
+    {
+        //Ok I'll behave, sorry eh
+        if (collision.gameObject.tag == "Range" && m_IsRogue)
+        {
+            m_ScoreManager.RemoveRogueSheep();
+            m_IsRogue = false;
+        }
+    }
+
+    void OnTriggerExit(Collider collision)
+    {
+        //we're going rogue!
+        if (collision.gameObject.tag == "Range" && !m_IsRogue)
+        {
+            m_ScoreManager.AddRogueSheep();
+            m_IsRogue = true;
+        }
     }
 }
