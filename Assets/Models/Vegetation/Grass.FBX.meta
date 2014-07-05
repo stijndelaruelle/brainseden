@@ -1,16 +1,28 @@
 fileFormatVersion: 2
-guid: 0b6b476006cb4304b90d8e0a74d1ce2e
+guid: 823167c3052584a4c8b6083ab7bbd6ab
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Grass_Dense
+    100004: Grass_Med
+    100006: Grass_Thin
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Box004
+    400002: Grass_Dense
+    400004: Grass_Med
+    400006: Grass_Thin
+    2300000: Grass_Dense
+    2300002: Grass_Med
+    2300004: Grass_Thin
+    3300000: Grass_Dense
+    3300002: Grass_Med
+    3300004: Grass_Thin
+    4300000: Grass_Dense
+    4300002: Grass_Med
+    4300004: Grass_Thin
     9500000: //RootNode
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -28,7 +40,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .00999999978
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -60,6 +72,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   additionalBone: 0
   userData: 
