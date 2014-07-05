@@ -15,9 +15,14 @@ public class SheepBehaviour : MonoBehaviour
     private bool m_Fleeing;
     private float m_UpdateTimer;
     private float m_RandomOffset;
+
+    private ScoreManager m_ScoreManager;
+    private bool m_IsRogue;
+
 	// Use this for initialization
 	void Start ()
 	{
+        m_ScoreManager = GameObject.Find("Scorebar").GetComponent<ScoreManager>();
 	    m_RandomOffset = UnityEngine.Random.Range(0, 100.0f);
 
 	    m_Height = transform.position.y;
@@ -56,7 +61,7 @@ public class SheepBehaviour : MonoBehaviour
     void Jump()
     {
         Vector3 pos = transform.position;
-        pos.y = m_Height + (float)(Math.Abs(Math.Sin((Time.time + m_RandomOffset) * 4.0f)*m_JumpHeight));
+        pos.y = m_Height + (float)(Math.Abs(Math.Sin((Time.time + m_RandomOffset) * 4.0f) * m_JumpHeight));
         transform.position = pos;
     }
 
@@ -68,5 +73,17 @@ public class SheepBehaviour : MonoBehaviour
     public void StopFlee()
     {
         m_Fleeing = false;
+    }
+
+    void OnTriggerEnter(Collider collision)
+    {
+        //Ok I'll behave, sorry eh
+        if (collision.gameObject.tag == "Range" && m_IsRogue) m_ScoreManager.RemoveRogueSheep();
+    }
+
+    void OnTriggerExit(Collider collision)
+    {
+        //we're going rogue!
+        if (collision.gameObject.tag == "Range" && !m_IsRogue) m_ScoreManager.AddRogueSheep();
     }
 }

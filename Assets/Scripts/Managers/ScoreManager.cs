@@ -15,6 +15,9 @@ public class ScoreManager : MonoBehaviour
         private set;
     }
 
+    private int m_RogueSheep = 0;
+    private float m_Timer = 1.0f;
+
 	void Start () 
 	{
         // Create 1x1 white texture
@@ -27,7 +30,20 @@ public class ScoreManager : MonoBehaviour
         CalculateBar();
 	}
 
-    public void AddScoreShepher(int amount)
+    void Update()
+    {
+        if (m_Timer <= 0.0f)
+        {
+            if (m_RogueSheep > 0) AddScoreSheep(1);
+            else                  AddScoreShepherd(1);
+
+            m_Timer = 1.0f;
+        }
+
+        m_Timer -= Time.deltaTime;
+    }
+
+    public void AddScoreShepherd(int amount)
     {
         ShepherdScore += amount;
         CalculateBar();
@@ -37,6 +53,20 @@ public class ScoreManager : MonoBehaviour
     {
         SheepScore += amount;
         CalculateBar();
+    }
+
+    public void AddRogueSheep()
+    {
+        Debug.Log("GOING ROGUE");
+        m_RogueSheep += 1;
+    }
+
+    public void RemoveRogueSheep()
+    {
+        m_RogueSheep -= 1;
+        if (m_RogueSheep < 0) m_RogueSheep = 0;
+
+        Debug.Log("SORRY EH");
     }
 
     void CalculateBar()
