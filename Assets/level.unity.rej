@@ -1,0 +1,78 @@
+diff a/Assets/level.unity b/Assets/level.unity	(rejected hunks)
+@@ -157,9 +157,10 @@
+   m_PrefabInternal: {fileID: 957595608}
+   m_GameObject: {fileID: 45596606}
+   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+-  m_LocalPosition: {x: 4.72675419, y: 10, z: 19.2961617}
++  m_LocalPosition: {x: -330.908325, y: 10, z: 9.92837524}
+   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+-  m_Children: []
++  m_Children:
++  - {fileID: 2089188530}
+   m_Father: {fileID: 0}
+   m_RootOrder: 2
+ --- !u!1 &174946962
+@@ -260,7 +261,7 @@
+   m_Name: 
+   m_EditorClassIdentifier: 
+   m_SheepPrefab: {fileID: 100000, guid: cf72d9c71f9c6a74a8c556105ea9ea6c, type: 2}
+-  m_SheepCount: 200
++  m_SheepCount: 100
+   m_Radius: 200
+ --- !u!4 &604997761
+ Transform:
+@@ -297,6 +298,54 @@
+     rgba: 4294967295
+   m_PixelCorrect: 1
+   m_RichText: 1
++--- !u!1001 &947292508
++Prefab:
++  m_ObjectHideFlags: 0
++  serializedVersion: 2
++  m_Modification:
++    m_TransformParent: {fileID: 45596612}
++    m_Modifications:
++    - target: {fileID: 400000, guid: 827ba137d7ba4d14aa9c41b0323c13e9, type: 2}
++      propertyPath: m_LocalPosition.x
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: 827ba137d7ba4d14aa9c41b0323c13e9, type: 2}
++      propertyPath: m_LocalPosition.y
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: 827ba137d7ba4d14aa9c41b0323c13e9, type: 2}
++      propertyPath: m_LocalPosition.z
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: 827ba137d7ba4d14aa9c41b0323c13e9, type: 2}
++      propertyPath: m_LocalRotation.x
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: 827ba137d7ba4d14aa9c41b0323c13e9, type: 2}
++      propertyPath: m_LocalRotation.y
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: 827ba137d7ba4d14aa9c41b0323c13e9, type: 2}
++      propertyPath: m_LocalRotation.z
++      value: 0
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: 827ba137d7ba4d14aa9c41b0323c13e9, type: 2}
++      propertyPath: m_LocalRotation.w
++      value: 1
++      objectReference: {fileID: 0}
++    - target: {fileID: 400000, guid: 827ba137d7ba4d14aa9c41b0323c13e9, type: 2}
++      propertyPath: m_RootMapOrder
++      value: 
++      objectReference: {fileID: 0}
++    - target: {fileID: 13500000, guid: 827ba137d7ba4d14aa9c41b0323c13e9, type: 2}
++      propertyPath: m_Radius
++      value: 50
++      objectReference: {fileID: 0}
++    m_RemovedComponents: []
++  m_ParentPrefab: {fileID: 100100000, guid: 827ba137d7ba4d14aa9c41b0323c13e9, type: 2}
++  m_RootGameObject: {fileID: 2089188529}
++  m_IsPrefabParent: 0
++  m_IsExploded: 1
+ --- !u!1001 &957595608
+ Prefab:
+   m_ObjectHideFlags: 0
