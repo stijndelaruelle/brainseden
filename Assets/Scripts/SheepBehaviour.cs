@@ -16,9 +16,15 @@ public class SheepBehaviour : MonoBehaviour
     private float m_JumpTimer;
 
     private GameObject m_Herder;
+
+    private ScoreManager m_ScoreManager;
+    private bool m_IsRogue = false;
+
 	// Use this for initialization
 	void Start ()
 	{
+        m_ScoreManager = GameObject.Find("Scorebar").GetComponent<ScoreManager>();
+
         m_JumpTimer = UnityEngine.Random.Range(0.5f,10.0f);
 	    m_UpdateTimer = UnityEngine.Random.Range(0.5f, 2.2f);
 
@@ -105,6 +111,13 @@ public class SheepBehaviour : MonoBehaviour
         {
             Flee(collider.gameObject);
         }
+
+        //Ok I'll behave, sorry eh
+        if (collider.gameObject.tag == "Range" && m_IsRogue)
+        {
+            m_ScoreManager.RemoveRogueSheep();
+            m_IsRogue = false;
+        }
     }
 
     void OnTriggerExit(Collider collider)
@@ -112,6 +125,13 @@ public class SheepBehaviour : MonoBehaviour
         if (collider.gameObject.name == "Influence")
         {
             StopFlee();
+        }
+
+        //we're going rogue!
+        if (collider.gameObject.tag == "Range" && !m_IsRogue)
+        {
+            m_ScoreManager.AddRogueSheep();
+            m_IsRogue = true;
         }
     }
 
