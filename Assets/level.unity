@@ -330,9 +330,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SheepPrefab: {fileID: 100000, guid: cf72d9c71f9c6a74a8c556105ea9ea6c, type: 2}
-  m_SheepCount: 10
+  m_SheepCount: 200
   m_MinDistance: 20
   m_MaxDistance: 30
+  m_Radius: 200
 --- !u!4 &604997761
 Transform:
   m_ObjectHideFlags: 0
@@ -556,8 +557,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 995538890}
-  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 0, y: 921.240234, z: 105.372437}
+  m_LocalRotation: {x: .391087025, y: 0, z: 0, w: .92035377}
+  m_LocalPosition: {x: 0, y: 403.192383, z: -220.27121}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -705,7 +706,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ea25162da4961824f85515b34c321627, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -720,7 +721,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 2009549746}
   m_GameObject: {fileID: 1302973433}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: fb62dc19e994c2746b5058aff002a00d, type: 3}
 --- !u!4 &1302973439
 Transform:
   m_ObjectHideFlags: 0
@@ -729,7 +730,7 @@ Transform:
   m_GameObject: {fileID: 1302973433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 26.497694, y: 20, z: 17.051424}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
