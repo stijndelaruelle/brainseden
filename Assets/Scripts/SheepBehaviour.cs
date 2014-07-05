@@ -33,7 +33,7 @@ public class SheepBehaviour : MonoBehaviour
 	void Update ()
 	{
 	    Jump();
-	    HandleMovement();
+	    //HandleMovement();
 	}
 
     private void HandleMovement()

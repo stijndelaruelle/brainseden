@@ -11,39 +11,35 @@ public class SheepSpawner : MonoBehaviour
     public int m_SheepCount = 10;
     public float m_MinDistance = 1.0f;
     public float m_MaxDistance = 2.0f;
-    private static List<GameObject> m_Sheeps;
+    public float m_Radius = 5.0f;
+    private static List<GameObject> m_Sheep;
 
     // Use this for initialization
     private void Start()
     {
-        m_Sheeps = new List<GameObject>();
+        m_Sheep = new List<GameObject>();
         for (int i = 0; i < m_SheepCount; i++)
         {
-            Vector3 newPos = GetNextPos(i);
-            GameObject newSheep =
-                Instantiate(m_SheepPrefab, newPos, Quaternion.AngleAxis(Random.Range(0, (float) Math.PI), Vector3.up))
-                    as GameObject;
-            m_Sheeps.Add(newSheep);
+            //http://stackoverflow.com/questions/5837572/generate-a-random-point-within-a-circle-uniformly
+
+            double t = 2 * Math.PI * Random.Range(0.0f, 1.0f);
+            double u = Random.Range(0.0f, 1.0f) + Random.Range(0.0f, 1.0f);
+
+            double r = u;
+            if (u > 1)
+            { 
+                r = 2 - u;
+            }
+
+            Vector3 newPos = new Vector3((float)(r * Math.Cos(t)) * m_Radius, 0.0f, (float)(r * Math.Sin(t)) * m_Radius);
+            GameObject newSheep = Instantiate(m_SheepPrefab, newPos, Quaternion.identity) as GameObject;
+
+            m_Sheep.Add(newSheep);
         }
-    }
-
-    // Update is called once per frame
-    private void Update() {}
-
-    private Vector3 GetNextPos(int index)
-    {
-        int rows = (int) Math.Sqrt(m_SheepCount);
-        int x = index%rows;
-        int y = index/rows;
-        Vector3 origin = new Vector3((-rows/2)*m_MaxDistance, 1, (-rows/2)*m_MaxDistance);
-        Vector3 newPos = origin;
-        newPos.x += (x*m_MaxDistance) + Random.Range(m_MinDistance, m_MaxDistance);
-        newPos.z += (y*m_MaxDistance) + Random.Range(m_MinDistance, m_MaxDistance);
-        return newPos;
     }
 
     public static List<GameObject> GetSheeps()
     {
-        return m_Sheeps;
+        return m_Sheep;
     }
 }
