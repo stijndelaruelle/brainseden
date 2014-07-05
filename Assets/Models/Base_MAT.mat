@@ -38,7 +38,7 @@ Material:
       data:
         first:
           name: _AOStrength
-        second: .5
+        second: .571428597
       data:
         first:
           name: _LightContrast
@@ -50,7 +50,7 @@ Material:
       data:
         first:
           name: _MinLightValue
-        second: .300000012
+        second: 0
       data:
         first:
           name: _WorldVariationTiling
