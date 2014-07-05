@@ -9,8 +9,6 @@ public class SheepSpawner : MonoBehaviour
 {
     public GameObject m_SheepPrefab;
     public int m_SheepCount = 10;
-    public float m_MinDistance = 1.0f;
-    public float m_MaxDistance = 2.0f;
     public float m_Radius = 5.0f;
     private static List<GameObject> m_Sheep;
 

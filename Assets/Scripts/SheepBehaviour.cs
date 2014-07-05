@@ -78,12 +78,20 @@ public class SheepBehaviour : MonoBehaviour
     void OnTriggerEnter(Collider collision)
     {
         //Ok I'll behave, sorry eh
-        if (collision.gameObject.tag == "Range" && m_IsRogue) m_ScoreManager.RemoveRogueSheep();
+        if (collision.gameObject.tag == "Range" && m_IsRogue) 
+        {
+            m_ScoreManager.RemoveRogueSheep();
+            m_IsRogue = false;
+        }
     }
 
     void OnTriggerExit(Collider collision)
     {
         //we're going rogue!
-        if (collision.gameObject.tag == "Range" && !m_IsRogue) m_ScoreManager.AddRogueSheep();
+        if (collision.gameObject.tag == "Range" && !m_IsRogue)
+        {
+            m_ScoreManager.AddRogueSheep();
+            m_IsRogue = true;
+        }
     }
 }
