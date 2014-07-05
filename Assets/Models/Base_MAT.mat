@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Base_MAT
-  m_Shader: {fileID: 4800000, guid: 9059aa0dd2f58e347ad16f2ed06a2238, type: 3}
+  m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -38,7 +38,7 @@ Material:
       data:
         first:
           name: _AOStrength
-        second: .5
+        second: .571428597
       data:
         first:
           name: _LightContrast
@@ -50,7 +50,7 @@ Material:
       data:
         first:
           name: _MinLightValue
-        second: .300000012
+        second: 0
       data:
         first:
           name: _WorldVariationTiling

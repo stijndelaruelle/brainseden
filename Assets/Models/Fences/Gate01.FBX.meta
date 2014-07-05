@@ -6,15 +6,20 @@ ModelImporter:
     100000: //RootNode
     100002: Gate01
     100004: Gate01_Sign
+    100006: Skull01
     400000: //RootNode
     400002: Gate01
     400004: Gate01_Sign
+    400006: Skull01
     2300000: Gate01
     2300002: Gate01_Sign
+    2300004: Skull01
     3300000: Gate01
     3300002: Gate01_Sign
+    3300004: Skull01
     4300000: Gate01
     4300002: Gate01_Sign
+    4300004: Skull01
     9500000: //RootNode
   materials:
     importMaterials: 1
