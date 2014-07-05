@@ -7,16 +7,14 @@ public class SheepBehaviour : MonoBehaviour
 {
     private float m_Height;
     public float m_JumpHeight = 2.0f;
-    public float m_UpdateTime = 0.0f;
-    public float m_MinInfluenceRadius = 100.0f;
-    public float m_MaxInfluenceRadius = 120.0f;
-    public float m_MinRunDistance = 70.0f;
-    public float m_MaxRunDistance = 100.0f;
+    public float m_UpdateTime = 5.0f;
 
+    private Vector3 m_Direction;
+    public float m_Speed;
+
+    private bool m_Fleeing;
     private float m_UpdateTimer;
     private float m_RandomOffset;
-    private Vector3 m_TargetPos;
-    private GameObject m_Herder;
 	// Use this for initialization
 	void Start ()
 	{
@@ -25,8 +23,12 @@ public class SheepBehaviour : MonoBehaviour
 	    m_Height = transform.position.y;
 	    m_UpdateTimer = m_UpdateTime;
 
-	    m_Herder = GameObject.Find("Shepherd");
-	    m_TargetPos = transform.position;
+	    m_Speed = 0;
+        float angle = UnityEngine.Random.Range(0, 360);
+
+	    transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
+        m_Direction = transform.rotation * Vector3.forward;
+	    m_Fleeing = false;
 	}
 	
 	// Update is called once per frame
@@ -41,25 +43,14 @@ public class SheepBehaviour : MonoBehaviour
         m_UpdateTimer -= Time.deltaTime;
         if (m_UpdateTimer < 0)
         {
-            Vector3 moveDir = transform.position - m_Herder.transform.position;
-            float dist = moveDir.magnitude;
-            if (dist < m_MaxInfluenceRadius)
+            if (!m_Fleeing)
             {
-                moveDir.Normalize();
 
-                moveDir = Quaternion.Euler(0, UnityEngine.Random.Range(-45, 45), 0) * moveDir;
-                float moveDist = UnityEngine.Random.Range(m_MinRunDistance, m_MaxRunDistance);
-                if (dist > m_MinInfluenceRadius)
-                {
-                    moveDist *= 1-(Mathf.Clamp(((moveDist - m_MinInfluenceRadius)/(m_MaxInfluenceRadius-m_MinInfluenceRadius)),0,1));
-                }
-                m_TargetPos = transform.position + (moveDir * moveDist);
             }
             m_UpdateTimer = m_UpdateTime;
         }
 
-        Vector3 newPos = Vector3.Lerp(transform.position, m_TargetPos, Time.deltaTime);
-        transform.position = newPos;
+        transform.position = transform.position + m_Direction*m_Speed;
     }
 
     void Jump()
@@ -68,5 +59,14 @@ public class SheepBehaviour : MonoBehaviour
         pos.y = m_Height + (float)(Math.Abs(Math.Sin((Time.time + m_RandomOffset) * 4.0f)*m_JumpHeight));
         transform.position = pos;
     }
-   
+
+    public void Flee(Vector3 herderPos)
+    {
+        m_Fleeing = true;
+    }
+
+    public void StopFlee()
+    {
+        m_Fleeing = false;
+    }
 }
