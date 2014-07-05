@@ -34,14 +34,7 @@ public class PlayerSheepBehaviour : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Shepherd")
-        {
-            Debug.Log("Fuck i'm dead.");
-        }
-
-        if (collision.gameObject.tag == "Terrain")
-        {
-            m_CanJump = true;
-        }
+        if (collision.gameObject.tag == "Shepherd") Debug.Log("Fuck i'm dead.");
+        if (collision.gameObject.tag == "Terrain")  m_CanJump = true;
     }
 }
