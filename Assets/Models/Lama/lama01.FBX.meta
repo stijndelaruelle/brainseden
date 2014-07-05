@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a6c16a65685901b4f93aa19afc92427a
+guid: fb62dc19e994c2746b5058aff002a00d
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -10,7 +10,7 @@ ModelImporter:
     4300000: lama1
     9500000: //RootNode
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
@@ -60,6 +60,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   additionalBone: 0
   userData: 

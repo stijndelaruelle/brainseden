@@ -238,7 +238,7 @@ Transform:
   m_PrefabInternal: {fileID: 702079701}
   m_GameObject: {fileID: 407262605}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1000, y: 0, z: -1000}
+  m_LocalPosition: {x: -999.835205, y: 0, z: -1000.94391}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SheepPrefab: {fileID: 100000, guid: cf72d9c71f9c6a74a8c556105ea9ea6c, type: 2}
-  m_SheepCount: 20
+  m_SheepCount: 10
   m_MinDistance: 20
   m_MaxDistance: 30
 --- !u!4 &604997761
@@ -368,33 +368,6 @@ GUIText:
     rgba: 4294967295
   m_PixelCorrect: 1
   m_RichText: 1
---- !u!1 &681919654
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 681919655}
-  m_Layer: 0
-  m_Name: Pickup
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &681919655
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 681919654}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -747.548584, y: -538.270813, z: -729.956055}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
 --- !u!1001 &702079701
 Prefab:
   m_ObjectHideFlags: 0
@@ -404,7 +377,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 6a4d32a6c89cfbd4087bea8c2f49eafe, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1000
+      value: -999.835205
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6a4d32a6c89cfbd4087bea8c2f49eafe, type: 2}
       propertyPath: m_LocalPosition.y
@@ -412,7 +385,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6a4d32a6c89cfbd4087bea8c2f49eafe, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1000
+      value: -1000.94391
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6a4d32a6c89cfbd4087bea8c2f49eafe, type: 2}
       propertyPath: m_LocalRotation.x
