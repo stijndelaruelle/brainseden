@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Crate_MAT
+  m_Name: Base_MAT
   m_Shader: {fileID: 4800000, guid: 9059aa0dd2f58e347ad16f2ed06a2238, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
@@ -17,40 +17,44 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 29b2838036199394991cb3a50859b3de, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _ColorTex
         second:
-          m_Texture: {fileID: 2800000, guid: 41c919259b488d74ba1afb2494280974, type: 3}
+          m_Texture: {fileID: 2800000, guid: 29b2838036199394991cb3a50859b3de, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _MasksTex
+          name: _VariationTex
         second:
-          m_Texture: {fileID: 2800000, guid: f0668c49d1f25a545bcfcef0cbac91d6, type: 3}
+          m_Texture: {fileID: 2800000, guid: 25ff83fa0b8b3cb47b854cd83d943735, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
           name: _AOStrength
-        second: 0
-      data:
-        first:
-          name: _LightSteps
-        second: 15
+        second: .571428597
       data:
         first:
           name: _LightContrast
         second: 5
       data:
         first:
+          name: _LightSteps
+        second: 10
+      data:
+        first:
           name: _MinLightValue
         second: 0
+      data:
+        first:
+          name: _WorldVariationTiling
+        second: 7.1500001
     m_Colors:
       data:
         first:
