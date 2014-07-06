@@ -66,7 +66,7 @@ public class SheepBehaviour : MonoBehaviour
             m_JumpTimer -= Time.deltaTime;
             if (m_JumpTimer < 0)
             {
-                rigidbody.AddForce(Vector3.up * 10000.0f, ForceMode.Acceleration);
+                rigidbody.AddForce(Vector3.up * 2000.0f, ForceMode.Acceleration);
                 m_CanJump = false;
                 m_JumpTimer = UnityEngine.Random.Range(0.5f, 10.0f);
             }
@@ -147,7 +147,7 @@ public class SheepBehaviour : MonoBehaviour
                 return false;
 
             m_Speed = Mathf.Lerp(m_MinFleeSpeed, m_MaxFleeSpeed, 1 - ((dist - m_MinFleeDist) / (m_MaxFleeDist - m_MinFleeDist)));
-            moveDir = -transform.position;
+            moveDir = GameObject.Find("Ring").transform.position - transform.position;
             moveDir.Normalize();
 
             m_Direction = m_TargetDirection = moveDir;
