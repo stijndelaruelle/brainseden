@@ -3,12 +3,11 @@ using System.Collections;
 
 public class DashLineBehaviour : MonoBehaviour {
 
-	private float _time = 0;
+	public float LifeTime = 0;
 
 	// Use this for initialization
 	void Start ()
 	{
-		_time = transform.GetComponentInChildren<TrailRenderer>().time;
 	}
 	
 	// Update is called once per frame
@@ -20,7 +19,7 @@ public class DashLineBehaviour : MonoBehaviour {
 	public void StartEffect()
 	{
 		transform.GetComponentInChildren<TrailRenderer>().enabled = true;
-		transform.GetComponentInChildren<TrailRenderer>().time = _time;
+		transform.GetComponentInChildren<TrailRenderer>().time = LifeTime;
 	}
 
 	public void EndEffect()
