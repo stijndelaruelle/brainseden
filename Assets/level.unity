@@ -223,7 +223,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ShepherdPrefab: {fileID: 100000, guid: 2ec8d60e919d84a47aad8bbd2e02454d, type: 2}
   m_PlayerSheepPrefab: {fileID: 100000, guid: e9354d58e62f24b47a065176e92504e1, type: 2}
-  m_Radius: 200
 --- !u!1 &995538890
 GameObject:
   m_ObjectHideFlags: 0
