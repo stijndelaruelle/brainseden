@@ -98,6 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 0
+  m_MaxFleeDist: 10
+  m_MinFleeDist: 0
+  m_MaxFleeSpeed: .5
+  m_MinFleeSpeed: 2
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
