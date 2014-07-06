@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 public class ShepherdBehaviour : MonoBehaviour, IPlayer
@@ -92,6 +93,15 @@ public class ShepherdBehaviour : MonoBehaviour, IPlayer
         {
             m_Item.Activate();
             m_Item = null;
+        }
+
+        if (Math.Abs(rigidbody.velocity.x + rigidbody.velocity.y) < 0.01f)
+        {
+            GetComponentInChildren<Animator>().SetBool("IsRunning", false);
+        }
+        else
+        {
+            GetComponentInChildren<Animator>().SetBool("IsRunning", true);
         }
 	}
 

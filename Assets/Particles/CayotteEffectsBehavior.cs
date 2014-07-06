@@ -4,12 +4,14 @@ using System.Collections;
 public class CayotteEffectsBehavior : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+	{
+	    StartLine();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
 	
 	}
 
@@ -20,7 +22,7 @@ public class CayotteEffectsBehavior : MonoBehaviour {
 	
 	public void EndLine()
 	{
-		transform.GetComponentInChildren<DashLineBehaviour>().StartEffect();
+		transform.GetComponentInChildren<DashLineBehaviour>().EndEffect();
 	}
 
 	public void Shout()
