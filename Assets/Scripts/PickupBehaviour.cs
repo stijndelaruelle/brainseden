@@ -9,8 +9,6 @@ public class PickupBehaviour : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-	    //Randomise which pickup we'll be
-        Type = PickupType.Bark;
 	}
 	
 	// Update is called once per frame
