@@ -67,7 +67,7 @@ public class SheepBehaviour : MonoBehaviour
             m_JumpTimer -= Time.deltaTime;
             if (m_JumpTimer < 0)
             {
-                rigidbody.AddForce(Vector3.up * m_JumpVelocity * Time.deltaTime, ForceMode.Acceleration);
+                rigidbody.AddForce(Vector3.up * m_JumpVelocity, ForceMode.Acceleration);
                 m_CanJump = false;
                 m_JumpTimer = UnityEngine.Random.Range(0.5f, 10.0f);
             }
@@ -111,6 +111,15 @@ public class SheepBehaviour : MonoBehaviour
 
         transform.LookAt(transform.position + m_Direction);
         transform.position = transform.position + m_Direction*m_Speed*Time.deltaTime;
+
+        if (m_Speed == 0.0f)
+        {
+            GetComponentInChildren<Animator>().SetBool("IsWalking", false);
+        }
+        else
+        {
+            GetComponentInChildren<Animator>().SetBool("IsWalking", true);
+        }
     }
 
     public bool HandleFlee()
@@ -162,6 +171,7 @@ public class SheepBehaviour : MonoBehaviour
     {
         m_Herder = herder;
         m_Influenced = true;
+        m_JumpTimer = 0;
     }
 
     public void StopFlee()
