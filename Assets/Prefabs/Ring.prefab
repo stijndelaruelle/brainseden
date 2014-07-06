@@ -58,8 +58,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .37677002, y: .0666599274, z: -19.1969624}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.69646072, y: .0666599274, z: -22.3677349}
+  m_LocalScale: {x: 2.80939627, y: 2.80939722, z: 2.80939722}
   m_Children:
   - {fileID: 400004}
   - {fileID: 400002}
@@ -128,8 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SheepPrefab: {fileID: 100000, guid: cf72d9c71f9c6a74a8c556105ea9ea6c, type: 2}
-  m_SheepCount: 80
-  m_Radius: 200
+  m_SheepCount: 20
 --- !u!132 &13200000
 GUIText:
   m_ObjectHideFlags: 1

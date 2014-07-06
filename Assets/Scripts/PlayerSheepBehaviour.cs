@@ -51,7 +51,7 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
         //Jump (this will be an animation)
         if (Input.GetButtonDown("Player2_Jump") && m_CanJump)
         {
-            rigidbody.AddForce(Vector3.up * 10000.0f, ForceMode.Acceleration);
+            rigidbody.AddForce(Vector3.up * 2000.0f, ForceMode.Acceleration);
             m_CanJump = false;
         }
 
