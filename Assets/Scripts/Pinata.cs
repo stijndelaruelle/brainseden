@@ -4,7 +4,6 @@ using System.Collections;
 public class Pinata : MonoBehaviour 
 {
     public GameObject m_PickupPrefab;
-    public int m_Health = 2;
 
     private float m_Countdown;
     private Collider m_PrevCollider;
@@ -21,12 +20,11 @@ public class Pinata : MonoBehaviour
         if (m_Countdown > 0.0f) m_Countdown -= Time.deltaTime;
 	}
 
-    void OnCollisionEnter(Collision coll)
+	void OnTriggerEnter(Collider collider)
     {
-        if (coll.collider.gameObject.tag != "Shepherd" && coll.collider.gameObject.tag != "PlayerSheep") return;
-        if (m_PrevCollider == coll.collider && m_Countdown > 0.0f) return;
+        if (collider.gameObject.tag != "Shepherd" && collider.gameObject.tag != "PlayerSheep") return;
+        if (m_PrevCollider == collider && m_Countdown > 0.0f) return;
 
-        m_Health -= 1;
 
         //Random direction
         int randX = Random.Range(25, 100);
@@ -40,17 +38,24 @@ public class Pinata : MonoBehaviour
 
         //Fire some point pickups
         GameObject pickup = Instantiate(m_PickupPrefab, transform.position, Quaternion.identity) as GameObject;
-        pickup.GetComponent<PickupBehaviour>().Type = PickupBehaviour.PickupType.Bark;
+		if (collider.gameObject.tag == "Shepherd") 
+		{ 
+			pickup.GetComponent<PickupBehaviour>().Type = PickupBehaviour.PickupType.Bark; 
+		}
+		else                                           
+		{ 
+			pickup.GetComponent<PickupBehaviour>().Type = PickupBehaviour.PickupType.Cloud; 
+		}
         pickup.rigidbody.AddForce(new Vector3(randX, randY, randZ));
 
-        if (m_Health <= 0)
-        {
-           //Fire pickup
-           Destroy(gameObject);
-        }
 
         gameObject.GetComponent<PinataEffects>().Hit();
-        m_PrevCollider = coll.collider;
+        m_PrevCollider = collider;
         m_Countdown = 1.0f;
     }
+
+	void Reset()
+	{
+		gameObject.GetComponent<PinataEffects>().Reset();
+	}
 }
