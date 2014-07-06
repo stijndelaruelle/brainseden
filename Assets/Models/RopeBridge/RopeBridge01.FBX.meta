@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: 559f04e93c8f9e24ab8f1e5dd1002eb3
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Box001
+    100002: Box002
+    100004: Box003
+    100006: Box004
+    100008: Cylinder001
+    100010: Cylinder003
+    100012: Line001
+    100014: Line002
+    100016: Line003
+    100018: Line004
+    100020: Object001
+    100022: //RootNode
+    100024: Cylinder004
+    100026: RopeBridge_Planks
+    100028: RopeBridge_Planks 1
+    100030: RopeBridge_Planks 2
+    100032: RopeBridge_Planks 3
+    100034: RopeBridge_Planks 4
+    100036: RopeBridge_Poles
+    100038: RopeBridge_Poles 1
+    100040: RopeBridgeRoops
+    100042: RopeBridgeRoops 1
+    100044: RopeBridgeRoops 2
+    100046: RopeBridgeRoops 3
+    400000: Box001
+    400002: Box002
+    400004: Box003
+    400006: Box004
+    400008: Cylinder001
+    400010: Cylinder003
+    400012: Line001
+    400014: Line002
+    400016: Line003
+    400018: Line004
+    400020: Object001
+    400022: //RootNode
+    400024: Cylinder004
+    400026: RopeBridge_Planks
+    400028: RopeBridge_Planks 1
+    400030: RopeBridge_Planks 2
+    400032: RopeBridge_Planks 3
+    400034: RopeBridge_Planks 4
+    400036: RopeBridge_Poles
+    400038: RopeBridge_Poles 1
+    400040: RopeBridgeRoops
+    400042: RopeBridgeRoops 1
+    400044: RopeBridgeRoops 2
+    400046: RopeBridgeRoops 3
+    2300000: Box001
+    2300002: Box002
+    2300004: Box003
+    2300006: Box004
+    2300008: Cylinder001
+    2300010: Cylinder003
+    2300012: Object001
+    2300014: Line001
+    2300016: Line002
+    2300018: Line003
+    2300020: Line004
+    2300022: Cylinder004
+    2300024: RopeBridge_Planks
+    2300026: RopeBridge_Planks 1
+    2300028: RopeBridge_Planks 2
+    2300030: RopeBridge_Planks 3
+    2300032: RopeBridge_Planks 4
+    2300034: RopeBridge_Poles
+    2300036: RopeBridge_Poles 1
+    2300038: RopeBridgeRoops
+    2300040: RopeBridgeRoops 1
+    2300042: RopeBridgeRoops 2
+    2300044: RopeBridgeRoops 3
+    3300000: Box001
+    3300002: Box002
+    3300004: Box003
+    3300006: Box004
+    3300008: Cylinder001
+    3300010: Cylinder003
+    3300012: Object001
+    3300014: Line001
+    3300016: Line002
+    3300018: Line003
+    3300020: Line004
+    3300022: Cylinder004
+    3300024: RopeBridge_Planks
+    3300026: RopeBridge_Planks 1
+    3300028: RopeBridge_Planks 2
+    3300030: RopeBridge_Planks 3
+    3300032: RopeBridge_Planks 4
+    3300034: RopeBridge_Poles
+    3300036: RopeBridge_Poles 1
+    3300038: RopeBridgeRoops
+    3300040: RopeBridgeRoops 1
+    3300042: RopeBridgeRoops 2
+    3300044: RopeBridgeRoops 3
+    4300000: Cylinder001
+    4300002: Box001
+    4300004: Box002
+    4300006: Box003
+    4300008: Cylinder003
+    4300010: Box004
+    4300012: Object001
+    4300014: Line001
+    4300016: Line002
+    4300018: Line003
+    4300020: Line004
+    4300022: Cylinder004
+    4300024: RopeBridge_Planks
+    4300026: RopeBridgeRoops
+    4300028: RopeBridge_Planks
+    4300030: RopeBridge_Planks
+    4300032: RopeBridgeRoops
+    4300034: RopeBridge_Poles
+    4300036: RopeBridgeRoops
+    4300038: RopeBridgeRoops
+    4300040: RopeBridge_Planks
+    4300042: RopeBridge_Planks
+    4300044: RopeBridge_Poles
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

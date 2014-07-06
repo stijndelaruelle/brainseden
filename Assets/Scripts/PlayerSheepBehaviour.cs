@@ -4,21 +4,8 @@ using System.Collections;
 
 public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
 {
-    public Vector3 Position
-    {
-        get
-        {
-            return transform.position;
-        }
-
-        set
-        {
-            transform.position = value;
-        }
-    }
-
-    public float m_BaseSpeed = 1500.0f;
-    public float m_SprintSpeed = 2500.0f;
+    public float m_BaseSpeed = 15000.0f;
+    public float m_SprintSpeed = 25000.0f;
 
     private bool m_CanJump;
 
@@ -26,8 +13,6 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
     private bool m_IsRogue = false;
 
     private IItem m_Item;
-
-
 
 	// Use this for initialization
 	void Start () 
@@ -45,8 +30,8 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
         float speed = m_BaseSpeed;
         if (Input.GetButton("Player2_Sprint")) speed = m_SprintSpeed;
 
-        rigidbody.AddForce(Vector3.right * horizontal * speed, ForceMode.Acceleration);
-        rigidbody.AddForce(Vector3.forward * vertical * speed, ForceMode.Acceleration);
+        rigidbody.AddForce(Vector3.right * horizontal * speed * Time.deltaTime, ForceMode.Acceleration);
+        rigidbody.AddForce(Vector3.forward * vertical * speed * Time.deltaTime, ForceMode.Acceleration);
 
         transform.LookAt(transform.position + new Vector3(horizontal, 0.0f, vertical));
 

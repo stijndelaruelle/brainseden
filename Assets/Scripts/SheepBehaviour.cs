@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Principal;
 using UnityEngine;
 using System.Collections;
 
@@ -14,6 +15,9 @@ public class SheepBehaviour : MonoBehaviour
 
     public float m_MaxFleeSpeed;
     public float m_MinFleeSpeed;
+
+    public float m_MaxRunSpeed;
+    public float m_MinRunSpeed;
 
     private bool m_Moving;
     private bool m_CanJump;
@@ -74,7 +78,7 @@ public class SheepBehaviour : MonoBehaviour
         if (!HandleFlee())
         {
             m_UpdateTimer -= Time.deltaTime;
-            if (m_UpdateTimer < 0)
+            if (m_UpdateTimer <= 0)
             {
                 if (UnityEngine.Random.Range(0, 2) == 0)
                 {
@@ -85,7 +89,7 @@ public class SheepBehaviour : MonoBehaviour
                 {
                     float angle = UnityEngine.Random.Range(0, 360);
                     m_TargetDirection = Quaternion.AngleAxis(angle, Vector3.up) * Vector3.forward;
-                    m_Speed = UnityEngine.Random.Range(0.2f, 0.8f);
+                    m_Speed = UnityEngine.Random.Range(m_MinRunSpeed, m_MaxRunSpeed);
                 }
                 else
                 {
@@ -105,21 +109,27 @@ public class SheepBehaviour : MonoBehaviour
         }
 
         transform.LookAt(transform.position + m_Direction);
-        transform.position = transform.position + m_Direction*m_Speed;
+        transform.position = transform.position + m_Direction*m_Speed*Time.deltaTime;
     }
 
     public bool HandleFlee()
     {
+        bool wasRunning = m_FleeTimer > 0;
         if (m_FleeTimer > 0) m_FleeTimer -= Time.deltaTime;
 
         bool canRun = m_FleeTimer > 0;
         if (!canRun)
         {
             //Should we start running?
-            if (!m_Influenced)
+            if (!m_Influenced && wasRunning)
             {
                 m_FleeTimer = 0;
                 m_Speed = 0;
+                return false;
+            }
+            else if (!m_Influenced)
+            {
+                m_FleeTimer = 0;
                 return false;
             }
             

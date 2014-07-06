@@ -3,18 +3,8 @@ using System.Collections;
 
 public class ShepherdBehaviour : MonoBehaviour, IPlayer
 {
-    public Vector3 Position
-    {
-        get
-        {
-            return transform.position;
-        }
-
-        set
-        {
-            transform.position = value;
-        }
-    }
+    public float m_BaseSpeed = 20000.0f;
+    public float m_SprintSpeed = 30000.0f;
 
     private IItem m_Item;
     private ScoreManager m_ScoreManager;
@@ -35,8 +25,8 @@ public class ShepherdBehaviour : MonoBehaviour, IPlayer
         float horizontal = Input.GetAxis("Player1_Horizontal");
         float vertical = Input.GetAxis("Player1_Vertical");
 
-        rigidbody.AddForce(Vector3.right * horizontal * 3000.0f, ForceMode.Acceleration);
-        rigidbody.AddForce(Vector3.forward * vertical * 3000.0f, ForceMode.Acceleration);
+        rigidbody.AddForce(Vector3.right * horizontal * m_BaseSpeed * Time.deltaTime, ForceMode.Acceleration);
+        rigidbody.AddForce(Vector3.forward * vertical * m_BaseSpeed * Time.deltaTime, ForceMode.Acceleration);
 
         transform.LookAt(transform.position + new Vector3(horizontal, 0.0f, vertical));
 
