@@ -313,7 +313,7 @@ Transform:
   m_LocalScale: {x: 1.98443174, y: .743264139, z: 1.13437319}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
 --- !u!64 &69057802
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2189,7 +2189,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
 --- !u!65 &641511484
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4808,6 +4808,10 @@ Prefab:
       propertyPath: m_Radius
       value: .5
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2c6ba6fb7f7f5fc428f1d0bfce8347f5, type: 2}
+      propertyPath: m_PlayerSheepPrefab
+      value: 
+      objectReference: {fileID: 100000, guid: 25994deebd124604a88e0ca0cb64317a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c6ba6fb7f7f5fc428f1d0bfce8347f5, type: 2}
   m_RootGameObject: {fileID: 1870089767}
@@ -5466,7 +5470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShepherdPrefab: {fileID: 100002, guid: 2ec8d60e919d84a47aad8bbd2e02454d, type: 2}
-  m_PlayerSheepPrefab: {fileID: 100000, guid: e9354d58e62f24b47a065176e92504e1, type: 2}
+  m_PlayerSheepPrefab: {fileID: 100000, guid: 25994deebd124604a88e0ca0cb64317a, type: 2}
 --- !u!114 &1870089770
 MonoBehaviour:
   m_ObjectHideFlags: 0
