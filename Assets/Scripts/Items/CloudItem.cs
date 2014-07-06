@@ -15,6 +15,6 @@ public class CloudItem : IItem
     {
         //On activate we spawn a cloud!
         //(test just give score again)
-        Target.AddScore(20);
+        GameObject gameObject = MonoBehaviour.Instantiate(Resources.Load("Cloud", typeof(GameObject)), new Vector3(Target.Position.x, 50.0f, Target.Position.z), Quaternion.identity) as GameObject;
     }
 }

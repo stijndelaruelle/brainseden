@@ -3,6 +3,19 @@ using System.Collections;
 
 public class ShepherdBehaviour : MonoBehaviour, IPlayer
 {
+    public Vector3 Position
+    {
+        get
+        {
+            return transform.position;
+        }
+
+        set
+        {
+            transform.position = value;
+        }
+    }
+
     public float m_BaseSpeed = 20000.0f;
     public float m_SprintSpeed = 30000.0f;
 
