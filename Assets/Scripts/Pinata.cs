@@ -23,15 +23,15 @@ public class Pinata : MonoBehaviour
 
     void OnCollisionEnter(Collision coll)
     {
-        if (coll.collider.gameObject.tag != "Influence" && coll.collider.gameObject.tag != "PlayerSheep") return;
+        if (coll.collider.gameObject.tag != "Shepherd" && coll.collider.gameObject.tag != "PlayerSheep") return;
         if (m_PrevCollider == coll.collider && m_Countdown > 0.0f) return;
 
         m_Health -= 1;
 
         //Random direction
-        int randX = Random.Range(5000, 15000);
-        int randY = Random.Range(10000, 25000);
-        int randZ = Random.Range(5000, 15000);
+        int randX = Random.Range(25, 100);
+        int randY = Random.Range(100, 500);
+        int randZ = Random.Range(25, 100);
 
         int negateX = Random.Range(0, 2);
         int negateZ = Random.Range(0, 2);
