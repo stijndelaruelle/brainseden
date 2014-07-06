@@ -88,7 +88,7 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Shepherd") Debug.Log("Fuck i'm dead.");
+        if (collision.gameObject.tag == "Shepherd") SoundManager.PlaySound("CoyoteBreathing");
         if (collision.gameObject.tag == "Terrain")  m_CanJump = true;
     }
 
