@@ -18,14 +18,20 @@ public class ScoreManager : MonoBehaviour
     private int m_RogueSheep = 0;
     private float m_Timer = 1.0f;
 
+    private SpriteRenderer m_RedBar;
+    private SpriteRenderer m_BlueBar;
+    private SpriteRenderer m_ShepherdIcon;
+    private SpriteRenderer m_SheepIcon;
+
 	void Start () 
 	{
-        // Create 1x1 white texture
-        var texture = new Texture2D(1, 1, TextureFormat.ARGB32, false);
-        texture.SetPixel(0, 0, Color.white);
-        texture.Apply();
+        m_RedBar = transform.Find("ProgressBarRed").GetComponent<SpriteRenderer>();
+        m_BlueBar = transform.Find("ProgressBarBlue").GetComponent<SpriteRenderer>();
+        m_ShepherdIcon = transform.Find("Icon_Coyote").GetComponent<SpriteRenderer>();
+        m_SheepIcon = transform.Find("Icon_Lama").GetComponent<SpriteRenderer>();
 
-        guiTexture.texture = texture;
+        ShepherdScore = 50;
+        SheepScore = 50;
 
         CalculateBar();
 	}
@@ -45,14 +51,30 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScoreShepherd(int amount)
     {
+        if (SheepScore <= 0) return;
+
         ShepherdScore += amount;
-        CalculateBar();
+        SheepScore -= amount;
+
+        if (SheepScore <= 0)
+        {
+            Debug.Log("Coyote wins!");
+        }
+        else CalculateBar();
     }
 
     public void AddScoreSheep(int amount)
     {
+        if (ShepherdScore <= 0) return;
+
         SheepScore += amount;
-        CalculateBar();
+        ShepherdScore -= amount;
+
+        if (ShepherdScore <= 0)
+        {
+            Debug.Log("Lamas win!");
+        }
+        else CalculateBar();
     }
 
     public void AddRogueSheep()
@@ -68,16 +90,24 @@ public class ScoreManager : MonoBehaviour
 
     void CalculateBar()
     {
-        //Difference
-        //float diff = ShepherdScore - SheepScore;
-        //diff /= 200; //100 points of difference is a full bar
-        //if (diff > 0.5f) diff = 0.5f;
-        //if (diff < -0.5f) diff = -0.5f;
+        //Scale the bars
+        m_BlueBar.transform.localScale = new Vector3(SheepScore / 100.0f, 1.0f, 1.0f);
+        m_RedBar.transform.localScale = new Vector3(ShepherdScore / 100.0f, 1.0f, 1.0f);
 
-        //transform.localScale = new Vector3(diff, 0.1f, 1.0f);
-        //transform.position = new Vector3(0.5f - diff / 2.0f, 0.94f, 0.0f);
+        //Show or hide the icons
+        if (ShepherdScore >= SheepScore)
+        {
+            m_ShepherdIcon.enabled = true;
+            m_SheepIcon.enabled = false;
+        }
+        else
+        {
+            m_ShepherdIcon.enabled = false;
+            m_SheepIcon.enabled = true;
+        }
 
-        //if (diff > 0.0f) guiTexture.color = new Color(0.44f, 0.039f, 0.039f);
-        //else             guiTexture.color = new Color(0.04f, 0.325f, 1.0f);
+        //Move the icons
+        m_ShepherdIcon.transform.localPosition = new Vector3(((ShepherdScore / 100.0f) * 8.6f) - 4.3f, 0.0f, -1.0f);
+        m_SheepIcon.transform.localPosition = new Vector3(((ShepherdScore / 100.0f) * 8.6f) - 4.3f, 0.0f, -1.0f);
     }
 }
