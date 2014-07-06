@@ -3,15 +3,14 @@ using System.Collections;
 
 public class PickupBehaviour : MonoBehaviour 
 {
-    enum PickupType { Score, Cloud };
-
-    PickupType m_PickupType;
+    public enum PickupType { Score, Cloud };
+    public PickupType Type { get; set; }
 
 	// Use this for initialization
 	void Start () 
 	{
 	    //Randomise which pickup we'll be
-        m_PickupType = PickupType.Cloud;
+        Type = PickupType.Cloud;
 	}
 	
 	// Update is called once per frame
@@ -20,7 +19,7 @@ public class PickupBehaviour : MonoBehaviour
 	    //Draai rond
 	}
 
-    void OnTriggerEnter(Collider collision)
+    void OnCollisionEnter(Collision collision)
     {
         IPlayer player = null;
         if (collision.gameObject.tag == "Shepherd")     player = collision.gameObject.GetComponent<ShepherdBehaviour>() as IPlayer;
@@ -29,8 +28,8 @@ public class PickupBehaviour : MonoBehaviour
         if (player != null)
         {
             IItem item = null;
-            
-            switch (m_PickupType)
+
+            switch (Type)
             {
                 case PickupType.Score:
                     item = new ScoreItem();
