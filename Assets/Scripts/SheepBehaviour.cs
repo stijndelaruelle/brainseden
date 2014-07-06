@@ -96,6 +96,8 @@ public class SheepBehaviour : MonoBehaviour
 
         transform.LookAt(transform.position + m_Direction);
         transform.position = transform.position + m_Direction*m_Speed;
+
+        if (m_Speed < 0) Debug.Log(m_Speed);
     }
 
     void Jump()

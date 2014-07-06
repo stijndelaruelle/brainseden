@@ -28,7 +28,6 @@ public class PlayerSheepBehaviour : MonoBehaviour
         float speed = m_BaseSpeed;
         if (Input.GetButton("Player2_Sprint")) speed = m_SprintSpeed;
 
-        Debug.Log(speed);
         rigidbody.AddForce(Vector3.right * horizontal * speed, ForceMode.Acceleration);
         rigidbody.AddForce(Vector3.forward * vertical * speed, ForceMode.Acceleration);
 
