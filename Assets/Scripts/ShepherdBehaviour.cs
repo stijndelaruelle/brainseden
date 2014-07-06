@@ -17,7 +17,14 @@ public class ShepherdBehaviour : MonoBehaviour, IPlayer
     }
 
     public float m_BaseSpeed = 20000.0f;
-    public float m_SprintSpeed = 30000.0f;
+    public float m_DashSpeed = 80000.0f;
+    public float m_DashCooldown = 5.0f;
+    public float m_DashLenght = 0.5f;
+
+    private bool m_IsDashing;
+    private float m_LastHorizontal;
+    private float m_LastVertical;
+    private float m_DashTimer = 0.0f;
 
     private IItem m_Item;
     private ScoreManager m_ScoreManager;
@@ -31,15 +38,39 @@ public class ShepherdBehaviour : MonoBehaviour, IPlayer
 	// Update is called once per frame
 	void Update ()
     {
-	    //bool down = Input.GetButtonDown("Jump");
-        //bool held = Input.GetButton("Jump");
-        //bool up = Input.GetButtonUp("Jump");
+        float speed = m_BaseSpeed;
 
         float horizontal = Input.GetAxis("Player1_Horizontal");
         float vertical = Input.GetAxis("Player1_Vertical");
 
-        rigidbody.AddForce(Vector3.right * horizontal * m_BaseSpeed * Time.deltaTime, ForceMode.Acceleration);
-        rigidbody.AddForce(Vector3.forward * vertical * m_BaseSpeed * Time.deltaTime, ForceMode.Acceleration);
+        //Start dashing
+        if (Input.GetButton("Player1_Sprint") && m_DashTimer <= 0.0f)
+        {
+            m_IsDashing = true;
+            m_DashTimer = m_DashLenght;
+            m_LastHorizontal = transform.forward.x;
+            m_LastVertical = transform.forward.z;
+        }
+
+        //Be dashing
+        if (m_IsDashing && m_DashTimer > 0.0f)
+        {
+            speed = m_DashSpeed;
+            horizontal = m_LastHorizontal;
+            vertical = m_LastVertical;
+        }
+
+        //Stop dashing
+        if (m_IsDashing && m_DashTimer <= 0.0f)
+        {
+            m_IsDashing = false;
+            m_DashTimer = m_DashCooldown;
+        }
+
+        if (m_DashTimer > 0.0f) m_DashTimer -= Time.deltaTime;
+
+        rigidbody.AddForce(Vector3.right * horizontal * speed * Time.deltaTime, ForceMode.Acceleration);
+        rigidbody.AddForce(Vector3.forward * vertical * speed * Time.deltaTime, ForceMode.Acceleration);
 
         transform.LookAt(transform.position + new Vector3(horizontal, 0.0f, vertical));
 
