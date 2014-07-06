@@ -21,7 +21,9 @@ ModelImporter:
     3300000: //RootNode
     4300000: Pinata
     4300002: Pinata1
-    7400000: Take 001
+    7400000: Shake
+    7400002: Drop
+    7400004: Idle
     9500000: //RootNode
     13700000: Pinata1
   materials:
@@ -39,7 +41,127 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Shake
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 36
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Pinata1
+        weight: 1
+      - path: Pinata_Root
+        weight: 1
+      - path: Pinata_Root/upperRope
+        weight: 1
+      - path: Pinata_Root/upperRope/middleRope
+        weight: 1
+      - path: Pinata_Root/upperRope/middleRope/lowerRope
+        weight: 1
+      - path: Pinata_Root/upperRope/middleRope/lowerRope/pinata
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Drop
+      takeName: Take 001
+      firstFrame: 37
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Pinata1
+        weight: 1
+      - path: Pinata_Root
+        weight: 1
+      - path: Pinata_Root/upperRope
+        weight: 1
+      - path: Pinata_Root/upperRope/middleRope
+        weight: 1
+      - path: Pinata_Root/upperRope/middleRope/lowerRope
+        weight: 1
+      - path: Pinata_Root/upperRope/middleRope/lowerRope/pinata
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 71
+      lastFrame: 75
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Pinata1
+        weight: 1
+      - path: Pinata_Root
+        weight: 1
+      - path: Pinata_Root/upperRope
+        weight: 1
+      - path: Pinata_Root/upperRope/middleRope
+        weight: 1
+      - path: Pinata_Root/upperRope/middleRope/lowerRope
+        weight: 1
+      - path: Pinata_Root/upperRope/middleRope/lowerRope/pinata
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -73,7 +195,7 @@ ModelImporter:
     armStretch: .0500000007
     legStretch: .0500000007
     feetSpacing: 0
-    rootMotionBoneName: 
+    rootMotionBoneName: Pinata_Root
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   additionalBone: 0
