@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
   - 135: {fileID: 13500000}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ring
   m_TagString: Range
   m_Icon: {fileID: 0}

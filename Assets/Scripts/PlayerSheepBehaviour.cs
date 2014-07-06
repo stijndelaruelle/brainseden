@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerSheepBehaviour : MonoBehaviour 
+public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
 {
     public float m_BaseSpeed = 1500.0f;
     public float m_SprintSpeed = 2500.0f;
@@ -11,6 +11,8 @@ public class PlayerSheepBehaviour : MonoBehaviour
 
     private ScoreManager m_ScoreManager;
     private bool m_IsRogue = false;
+
+    private IItem m_Item;
 
 	// Use this for initialization
 	void Start () 
@@ -39,6 +41,13 @@ public class PlayerSheepBehaviour : MonoBehaviour
             rigidbody.AddForce(Vector3.up * 10000.0f, ForceMode.Acceleration);
             m_CanJump = false;
         }
+
+        //Use item
+        if (Input.GetButtonDown("Player2_Fire") && m_Item != null)
+        {
+            m_Item.Activate();
+            m_Item = null;
+        }
 	}
 
     void OnCollisionEnter(Collision collision)
@@ -65,5 +74,18 @@ public class PlayerSheepBehaviour : MonoBehaviour
             m_ScoreManager.AddRogueSheep();
             m_IsRogue = true;
         }
+    }
+
+    //--------------------------
+    // IPlayer Interface
+    //--------------------------
+    public void SetItem(IItem item)
+    {
+        m_Item = item;
+    }
+
+    public void AddScore(int amount)
+    {
+        m_ScoreManager.AddScoreSheep(amount);
     }
 }
