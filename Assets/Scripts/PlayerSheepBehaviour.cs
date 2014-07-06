@@ -4,6 +4,19 @@ using System.Collections;
 
 public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
 {
+    public Vector3 Position
+    {
+        get
+        {
+            return transform.position;
+        }
+
+        set
+        {
+            transform.position = value;
+        }
+    }
+
     public float m_BaseSpeed = 15000.0f;
     public float m_SprintSpeed = 25000.0f;
 
