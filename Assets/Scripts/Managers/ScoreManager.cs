@@ -57,7 +57,6 @@ public class ScoreManager : MonoBehaviour
 
     public void AddRogueSheep()
     {
-        Debug.Log("GOING ROGUE");
         m_RogueSheep += 1;
     }
 
@@ -65,8 +64,6 @@ public class ScoreManager : MonoBehaviour
     {
         m_RogueSheep -= 1;
         if (m_RogueSheep < 0) m_RogueSheep = 0;
-
-        Debug.Log("SORRY EH");
     }
 
     void CalculateBar()
