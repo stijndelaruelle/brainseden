@@ -4,6 +4,19 @@ using System.Collections;
 
 public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
 {
+    public Vector3 Position
+    {
+        get
+        {
+            return transform.position;
+        }
+
+        set
+        {
+            transform.position = value;
+        }
+    }
+
     public float m_BaseSpeed = 1500.0f;
     public float m_SprintSpeed = 2500.0f;
 
@@ -13,6 +26,8 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
     private bool m_IsRogue = false;
 
     private IItem m_Item;
+
+
 
 	// Use this for initialization
 	void Start () 

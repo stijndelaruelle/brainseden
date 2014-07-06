@@ -3,6 +3,19 @@ using System.Collections;
 
 public class ShepherdBehaviour : MonoBehaviour, IPlayer
 {
+    public Vector3 Position
+    {
+        get
+        {
+            return transform.position;
+        }
+
+        set
+        {
+            transform.position = value;
+        }
+    }
+
     private IItem m_Item;
     private ScoreManager m_ScoreManager;
 
