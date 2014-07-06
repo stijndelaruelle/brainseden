@@ -31,6 +31,7 @@ public class SheepBehaviour : MonoBehaviour
     private bool m_IsRogue;
     private bool m_Influenced;
     private float m_FleeTimer;
+    private bool m_UltimatePanic;
 
 	// Use this for initialization
 	void Start ()
@@ -179,14 +180,24 @@ public class SheepBehaviour : MonoBehaviour
         m_Influenced = false;
     }
 
-    public void UltimatePanic()
+    public void UltimatePanic(GameObject herder)
     {
+        m_Influenced = true;
+        m_UltimatePanic = true;
         m_FleeTimer = 5.0f;
+        m_Herder = herder;
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Terrain") m_CanJump = true;
+        if (collision.gameObject.tag == "Sheep" && !m_IsRogue && m_UltimatePanic)
+        {
+            m_Influenced = false;
+            m_UltimatePanic = false;
+            m_FleeTimer = 0.0f;
+            m_Speed = 0.0f;
+        }
     }
 
     void OnTriggerEnter(Collider collider)
