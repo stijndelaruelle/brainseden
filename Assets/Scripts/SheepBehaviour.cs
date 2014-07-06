@@ -54,6 +54,21 @@ public class SheepBehaviour : MonoBehaviour
 	    HandleMovement();
 	}
 
+    void Jump()
+    {
+        //Jump (this will be an animation)
+        if (m_CanJump)
+        {
+            m_JumpTimer -= Time.deltaTime;
+            if (m_JumpTimer < 0)
+            {
+                rigidbody.AddForce(Vector3.up * 10000.0f, ForceMode.Acceleration);
+                m_CanJump = false;
+                m_JumpTimer = UnityEngine.Random.Range(0.5f, 10.0f);
+            }
+        }
+    }
+
     private void HandleMovement()
     {
         if (!HandleFlee())
@@ -62,7 +77,10 @@ public class SheepBehaviour : MonoBehaviour
             if (m_UpdateTimer < 0)
             {
                 if (UnityEngine.Random.Range(0, 2) == 0)
+                {
                     m_Moving = !m_Moving;
+                }
+
                 if (m_Moving)
                 {
                     float angle = UnityEngine.Random.Range(0, 360);
@@ -88,64 +106,11 @@ public class SheepBehaviour : MonoBehaviour
 
         transform.LookAt(transform.position + m_Direction);
         transform.position = transform.position + m_Direction*m_Speed;
-
-        if (m_Speed < 0) Debug.Log(m_Speed);
-    }
-
-    void Jump()
-    {
-        //Jump (this will be an animation)
-        if (m_CanJump)
-        {
-            m_JumpTimer -= Time.deltaTime;
-            if (m_JumpTimer < 0)
-            {
-                rigidbody.AddForce(Vector3.up*10000.0f, ForceMode.Acceleration);
-                m_CanJump = false;
-                m_JumpTimer = UnityEngine.Random.Range(0.5f, 10.0f);
-            }
-        }
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Terrain")  m_CanJump = true;
-    }
-
-    void OnTriggerEnter(Collider collider)
-    {
-        if (collider.gameObject.name == "Influence")
-        {
-            StartFlee(collider.gameObject);
-        }
-
-        //Ok I'll behave, sorry eh
-        if (collider.gameObject.tag == "Range" && m_IsRogue)
-        {
-            m_ScoreManager.RemoveRogueSheep();
-            m_IsRogue = false;
-        }
-    }
-
-    void OnTriggerExit(Collider collider)
-    {
-        //we're going rogue!
-        if (collider.gameObject.tag == "Range" && !m_IsRogue)
-        {
-            m_ScoreManager.AddRogueSheep();
-            m_IsRogue = true;
-        }
-        if (collider.gameObject.name == "Influence")
-        {
-            StopFlee();
-        }
-
     }
 
     public bool HandleFlee()
     {
-        if (m_FleeTimer > 0)
-            m_FleeTimer -= Time.deltaTime;
+        if (m_FleeTimer > 0) m_FleeTimer -= Time.deltaTime;
 
         bool canRun = m_FleeTimer > 0;
         if (!canRun)
@@ -169,11 +134,14 @@ public class SheepBehaviour : MonoBehaviour
         {
             Vector3 moveDir = transform.position - m_Herder.transform.position;
             float dist = moveDir.magnitude;
+
             if (dist < m_MinFleeDist)
                 return false;
+
             m_Speed = Mathf.Lerp(m_MinFleeSpeed, m_MaxFleeSpeed, 1 - ((dist - m_MinFleeDist) / (m_MaxFleeDist - m_MinFleeDist)));
             moveDir = -transform.position;
             moveDir.Normalize();
+
             m_Direction = m_TargetDirection = moveDir;
             return true;
         }
@@ -189,5 +157,40 @@ public class SheepBehaviour : MonoBehaviour
     public void StopFlee()
     {
         m_Influenced = false;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Terrain") m_CanJump = true;
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.name == "Influence")
+        {
+            StartFlee(collider.gameObject);
+        }
+
+        //Ok I'll behave, sorry eh
+        if (collider.gameObject.tag == "Range" && m_IsRogue)
+        {
+            m_ScoreManager.RemoveRogueSheep();
+            m_IsRogue = false;
+        }
+    }
+
+    void OnTriggerExit(Collider collider)
+    {
+        if (collider.gameObject.name == "Influence")
+        {
+            StopFlee();
+        }
+
+        //we're going rogue!
+        if (collider.gameObject.tag == "Range" && !m_IsRogue)
+        {
+            m_ScoreManager.AddRogueSheep();
+            m_IsRogue = true;
+        }
     }
 }

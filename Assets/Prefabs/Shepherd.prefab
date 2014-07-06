@@ -10,9 +10,10 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  - 114: {fileID: 11400000}
   - 54: {fileID: 5400000}
-  m_Layer: 0
+  - 65: {fileID: 6500000}
+  - 114: {fileID: 11400000}
+  m_Layer: 8
   m_Name: Shepherd
   m_TagString: Shepherd
   m_Icon: {fileID: 0}
@@ -42,8 +43,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.72675419, y: 10, z: 19.2961617}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalPosition: {x: -337.669556, y: 0, z: 16.504425}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
   - {fileID: 400002}
   m_Father: {fileID: 0}
@@ -102,6 +103,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!65 &6500000
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .716249466, y: 1.55277944, z: 1.30644834}
+  m_Center: {x: 9.53674316e-07, y: .780811191, z: .162819684}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
