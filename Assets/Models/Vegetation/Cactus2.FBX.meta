@@ -1,48 +1,43 @@
 fileFormatVersion: 2
-guid: fb62dc19e994c2746b5058aff002a00d
+guid: 2b7d623f360e8164f8f5ae140414fb42
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Box003
-    100004: Box004
-    100006: lama1
-    100008: Lama_body
-    100010: Lama_head
-    100012: Lama_L_backleg
-    100014: Lama_L_frontleg
-    100016: Lama_neck1
-    100018: Lama_neck2
-    100020: Lama_R_backleg
-    100022: Lama_R_frontleg
+    100002: Cactus_RoundBig
+    100004: Cactus_RoundSmall
+    100006: Cactus_Weird
+    100008: Flower_002
+    100010: Flower_003
+    100012: Flower_01
     400000: //RootNode
-    400002: Box003
-    400004: Box004
-    400006: lama1
-    400008: Lama_body
-    400010: Lama_head
-    400012: Lama_L_backleg
-    400014: Lama_L_frontleg
-    400016: Lama_neck1
-    400018: Lama_neck2
-    400020: Lama_R_backleg
-    400022: Lama_R_frontleg
-    2300000: //RootNode
-    2300002: Box003
-    2300004: Box004
-    2300006: lama1
-    3300000: //RootNode
-    3300002: Box003
-    3300004: Box004
-    3300006: lama1
-    4300000: lama1
-    4300002: Box003
-    4300004: Box004
-    7400000: Take 001
+    400002: Cactus_RoundBig
+    400004: Cactus_RoundSmall
+    400006: Cactus_Weird
+    400008: Flower_002
+    400010: Flower_003
+    400012: Flower_01
+    2300000: Cactus_RoundBig
+    2300002: Cactus_RoundSmall
+    2300004: Cactus_Weird
+    2300006: Flower_002
+    2300008: Flower_003
+    2300010: Flower_01
+    3300000: Cactus_RoundBig
+    3300002: Cactus_RoundSmall
+    3300004: Cactus_Weird
+    3300006: Flower_002
+    3300008: Flower_003
+    3300010: Flower_01
+    4300000: Cactus_RoundBig
+    4300002: Cactus_RoundSmall
+    4300004: Cactus_Weird
+    4300006: Flower_01
+    4300008: Flower_002
+    4300010: Flower_003
     9500000: //RootNode
-    13700000: lama1
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
   animations:
@@ -60,7 +55,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: .00999999978
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

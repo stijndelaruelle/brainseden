@@ -1,46 +1,14 @@
 fileFormatVersion: 2
-guid: fb62dc19e994c2746b5058aff002a00d
+guid: 69a24a34fb312824b8bbf6cba0a10bde
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Box003
-    100004: Box004
-    100006: lama1
-    100008: Lama_body
-    100010: Lama_head
-    100012: Lama_L_backleg
-    100014: Lama_L_frontleg
-    100016: Lama_neck1
-    100018: Lama_neck2
-    100020: Lama_R_backleg
-    100022: Lama_R_frontleg
     400000: //RootNode
-    400002: Box003
-    400004: Box004
-    400006: lama1
-    400008: Lama_body
-    400010: Lama_head
-    400012: Lama_L_backleg
-    400014: Lama_L_frontleg
-    400016: Lama_neck1
-    400018: Lama_neck2
-    400020: Lama_R_backleg
-    400022: Lama_R_frontleg
     2300000: //RootNode
-    2300002: Box003
-    2300004: Box004
-    2300006: lama1
     3300000: //RootNode
-    3300002: Box003
-    3300004: Box004
-    3300006: lama1
-    4300000: lama1
-    4300002: Box003
-    4300004: Box004
-    7400000: Take 001
+    4300000: Pinata
     9500000: //RootNode
-    13700000: lama1
   materials:
     importMaterials: 0
     materialName: 0
