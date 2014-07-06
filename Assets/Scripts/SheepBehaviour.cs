@@ -179,6 +179,11 @@ public class SheepBehaviour : MonoBehaviour
         m_Influenced = false;
     }
 
+    public void UltimatePanic()
+    {
+        m_FleeTimer = 5.0f;
+    }
+
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Terrain") m_CanJump = true;

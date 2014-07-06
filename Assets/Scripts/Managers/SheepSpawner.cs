@@ -9,7 +9,7 @@ public class SheepSpawner : MonoBehaviour
 {
     public GameObject m_SheepPrefab;
     public int m_SheepCount = 10;
-    private static List<GameObject> m_Sheep;
+    private List<GameObject> m_Sheep;
 
     // Use this for initialization
     private void Start()
@@ -37,7 +37,7 @@ public class SheepSpawner : MonoBehaviour
         }
     }
 
-    public static List<GameObject> GetSheeps()
+    public List<GameObject> GetSheep()
     {
         return m_Sheep;
     }

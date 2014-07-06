@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BarkItem : IItem
 {
@@ -13,8 +14,14 @@ public class BarkItem : IItem
 
     public void Activate()
     {
-        //On activate we spawn a cloud!
-        //(test just give score again)
-        MonoBehaviour.Instantiate(Resources.Load("Cloud", typeof(GameObject)), new Vector3(Target.Position.x, 50.0f, Target.Position.z), Quaternion.identity);
+        //On activate we scare everyone
+        List<GameObject> sheep = GameObject.Find("GLOBALS").GetComponent<SheepSpawner>().GetSheep();
+
+        Debug.Log("BARK");
+
+        foreach (GameObject sh in sheep)
+        {
+            sh.GetComponent<SheepBehaviour>().UltimatePanic();
+        }
     }
 }

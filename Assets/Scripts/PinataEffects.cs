@@ -19,12 +19,12 @@ public class PinataEffects : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		_particles = transform.FindChild("Pinata_Root").
+        _particles = transform.FindChild("Pinata_Root").
 			FindChild("upperRope").
 			FindChild("middleRope").
 			FindChild("lowerRope").
 			FindChild("pinata").
-			FindChild("PinataParitcle").GetComponent<ParticleSystem>();
+			FindChild("PinataParticle").GetComponent<ParticleSystem>();
 
 		_particles.Stop();
 

@@ -3,14 +3,14 @@ using System.Collections;
 
 public class PickupBehaviour : MonoBehaviour 
 {
-    public enum PickupType { Score, Cloud };
+    public enum PickupType { Score, Cloud, Bark };
     public PickupType Type { get; set; }
 
 	// Use this for initialization
 	void Start () 
 	{
 	    //Randomise which pickup we'll be
-        Type = PickupType.Cloud;
+        Type = PickupType.Bark;
 	}
 	
 	// Update is called once per frame
@@ -38,6 +38,10 @@ public class PickupBehaviour : MonoBehaviour
 
                 case PickupType.Cloud:
                     item = new CloudItem();
+                    break;
+
+                case PickupType.Bark:
+                    item = new BarkItem();
                     break;
 
                 default:

@@ -40,7 +40,7 @@ public class Pinata : MonoBehaviour
 
         //Fire some point pickups
         GameObject pickup = Instantiate(m_PickupPrefab, transform.position, Quaternion.identity) as GameObject;
-        pickup.GetComponent<PickupBehaviour>().Type = PickupBehaviour.PickupType.Score;
+        pickup.GetComponent<PickupBehaviour>().Type = PickupBehaviour.PickupType.Bark;
         pickup.rigidbody.AddForce(new Vector3(randX, randY, randZ));
 
         if (m_Health <= 0)
@@ -49,6 +49,7 @@ public class Pinata : MonoBehaviour
            Destroy(gameObject);
         }
 
+        gameObject.GetComponent<PinataEffects>().Hit();
         m_PrevCollider = coll.collider;
         m_Countdown = 1.0f;
     }
