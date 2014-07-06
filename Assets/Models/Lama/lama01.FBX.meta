@@ -38,7 +38,9 @@ ModelImporter:
     4300000: lama1
     4300002: Box003
     4300004: Box004
-    7400000: Take 001
+    7400000: WalkCycle
+    7400002: Headbutt
+    7400004: Eating
     9500000: //RootNode
     13700000: lama1
   materials:
@@ -56,7 +58,145 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: WalkCycle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: lama1
+        weight: 1
+      - path: Lama_body
+        weight: 1
+      - path: Lama_body/Lama_L_backleg
+        weight: 1
+      - path: Lama_body/Lama_L_frontleg
+        weight: 1
+      - path: Lama_body/Lama_neck1
+        weight: 1
+      - path: Lama_body/Lama_neck1/Lama_neck2
+        weight: 1
+      - path: Lama_body/Lama_neck1/Lama_neck2/Lama_head
+        weight: 1
+      - path: Lama_body/Lama_R_backleg
+        weight: 1
+      - path: Lama_body/Lama_R_frontleg
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Headbutt
+      takeName: Take 001
+      firstFrame: 13
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: lama1
+        weight: 1
+      - path: Lama_body
+        weight: 1
+      - path: Lama_body/Lama_L_backleg
+        weight: 1
+      - path: Lama_body/Lama_L_frontleg
+        weight: 1
+      - path: Lama_body/Lama_neck1
+        weight: 1
+      - path: Lama_body/Lama_neck1/Lama_neck2
+        weight: 1
+      - path: Lama_body/Lama_neck1/Lama_neck2/Lama_head
+        weight: 1
+      - path: Lama_body/Lama_R_backleg
+        weight: 1
+      - path: Lama_body/Lama_R_frontleg
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Eating
+      takeName: Take 001
+      firstFrame: 26
+      lastFrame: 85
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: lama1
+        weight: 1
+      - path: Lama_body
+        weight: 1
+      - path: Lama_body/Lama_L_backleg
+        weight: 1
+      - path: Lama_body/Lama_L_frontleg
+        weight: 1
+      - path: Lama_body/Lama_neck1
+        weight: 1
+      - path: Lama_body/Lama_neck1/Lama_neck2
+        weight: 1
+      - path: Lama_body/Lama_neck1/Lama_neck2/Lama_head
+        weight: 1
+      - path: Lama_body/Lama_R_backleg
+        weight: 1
+      - path: Lama_body/Lama_R_frontleg
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
