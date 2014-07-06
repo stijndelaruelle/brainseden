@@ -70,6 +70,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400008}
   - 95: {fileID: 9500000}
+  - 65: {fileID: 6500000}
   m_Layer: 0
   m_Name: Windmill
   m_TagString: Untagged
@@ -133,14 +134,26 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: -.0823895931, z: 0, w: .99660027}
+  m_LocalPosition: {x: 12.419632, y: .00915527344, z: -8.08084106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400006}
   - {fileID: 400004}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!65 &6500000
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100008}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.78838539, y: 7.30327892, z: 2.44708252}
+  m_Center: {x: -.308251649, y: 3.61838102, z: -.0647062361}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
