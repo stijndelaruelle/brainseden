@@ -9,6 +9,7 @@ public class SheepBehaviour : MonoBehaviour
     private Vector3 m_Direction;
     private Vector3 m_TargetDirection;
     public float m_Speed;
+    public float m_JumpVelocity;
 
     public float m_MaxFleeDist;
     public float m_MinFleeDist;
@@ -66,7 +67,7 @@ public class SheepBehaviour : MonoBehaviour
             m_JumpTimer -= Time.deltaTime;
             if (m_JumpTimer < 0)
             {
-                rigidbody.AddForce(Vector3.up * 2000.0f, ForceMode.Acceleration);
+                rigidbody.AddForce(Vector3.up * m_JumpVelocity * Time.deltaTime, ForceMode.Acceleration);
                 m_CanJump = false;
                 m_JumpTimer = UnityEngine.Random.Range(0.5f, 10.0f);
             }
