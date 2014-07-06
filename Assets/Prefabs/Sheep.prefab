@@ -101,7 +101,7 @@ MonoBehaviour:
   m_MaxFleeDist: 2
   m_MinFleeDist: .100000001
   m_MaxFleeSpeed: 7
-  m_MinFleeSpeed: 4
+  m_MinFleeSpeed: 7
   m_MaxRunSpeed: 3
   m_MinRunSpeed: 2
 --- !u!1001 &100100000
