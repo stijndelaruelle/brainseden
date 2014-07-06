@@ -9,6 +9,12 @@ public class SheepBehaviour : MonoBehaviour
     private Vector3 m_TargetDirection;
     public float m_Speed;
 
+    public float m_MaxFleeDist;
+    public float m_MinFleeDist;
+
+    public float m_MaxFleeSpeed;
+    public float m_MinFleeSpeed;
+
     private bool m_Moving;
     private bool m_CanJump;
     private float m_UpdateTimer;
@@ -17,9 +23,9 @@ public class SheepBehaviour : MonoBehaviour
     private GameObject m_Herder;
 
     private ScoreManager m_ScoreManager;
-    private bool m_IsRogue = false;
-    private float m_FleeTimer;
+    private bool m_IsRogue;
     private bool m_Influenced;
+    private float m_FleeTimer;
 
 	// Use this for initialization
 	void Start ()
@@ -35,9 +41,10 @@ public class SheepBehaviour : MonoBehaviour
 	    transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
         m_Direction = transform.rotation * Vector3.forward;
 	    m_TargetDirection = m_Direction;
-	    m_FleeTimer = 0;
 	    m_Influenced = false;
+	    m_FleeTimer = 0.0f;
 	    m_CanJump = true;
+	    m_IsRogue = false;
 	}
 	
 	// Update is called once per frame
@@ -47,30 +54,33 @@ public class SheepBehaviour : MonoBehaviour
 	    HandleMovement();
 	}
 
-    private void HandleMovement()
+    void Jump()
     {
-        if (m_FleeTimer > 0)
+        //Jump (this will be an animation)
+        if (m_CanJump)
         {
-            if (m_Influenced)
-                Flee(m_Herder);
-            m_FleeTimer -= Time.deltaTime;
-            if (m_FleeTimer <= 0)
+            m_JumpTimer -= Time.deltaTime;
+            if (m_JumpTimer < 0)
             {
-                if (!m_Influenced)
-                    StopFlee();
-                else
-                {
-                    Flee(m_Herder);
-                }
+                rigidbody.AddForce(Vector3.up * 10000.0f, ForceMode.Acceleration);
+                m_CanJump = false;
+                m_JumpTimer = UnityEngine.Random.Range(0.5f, 10.0f);
             }
         }
-        else
+    }
+
+    private void HandleMovement()
+    {
+        if (!HandleFlee())
         {
             m_UpdateTimer -= Time.deltaTime;
             if (m_UpdateTimer < 0)
             {
                 if (UnityEngine.Random.Range(0, 2) == 0)
+                {
                     m_Moving = !m_Moving;
+                }
+
                 if (m_Moving)
                 {
                     float angle = UnityEngine.Random.Range(0, 360);
@@ -96,37 +106,69 @@ public class SheepBehaviour : MonoBehaviour
 
         transform.LookAt(transform.position + m_Direction);
         transform.position = transform.position + m_Direction*m_Speed;
-
-        if (m_Speed < 0) Debug.Log(m_Speed);
     }
 
-    void Jump()
+    public bool HandleFlee()
     {
-        //Jump (this will be an animation)
-        if (m_CanJump)
+        if (m_FleeTimer > 0) m_FleeTimer -= Time.deltaTime;
+
+        bool canRun = m_FleeTimer > 0;
+        if (!canRun)
         {
-            m_JumpTimer -= Time.deltaTime;
-            if (m_JumpTimer < 0)
+            //Should we start running?
+            if (!m_Influenced)
             {
-                rigidbody.AddForce(Vector3.up*10000.0f, ForceMode.Acceleration);
-                m_CanJump = false;
-                m_JumpTimer = UnityEngine.Random.Range(0.5f, 10.0f);
+                m_FleeTimer = 0;
+                return false;
+            }
+            
+            if (m_IsRogue)
+            {
+                // We are influenced and rogue, start fleeing
+                m_FleeTimer = UnityEngine.Random.Range(0.2f, 0.5f);
+                canRun = true;
             }
         }
+
+        if (canRun)
+        {
+            Vector3 moveDir = transform.position - m_Herder.transform.position;
+            float dist = moveDir.magnitude;
+
+            if (dist < m_MinFleeDist)
+                return false;
+
+            m_Speed = Mathf.Lerp(m_MinFleeSpeed, m_MaxFleeSpeed, 1 - ((dist - m_MinFleeDist) / (m_MaxFleeDist - m_MinFleeDist)));
+            moveDir = -transform.position;
+            moveDir.Normalize();
+
+            m_Direction = m_TargetDirection = moveDir;
+            return true;
+        }
+        return false;
+    }
+
+    public void StartFlee(GameObject herder)
+    {
+        m_Herder = herder;
+        m_Influenced = true;
+    }
+
+    public void StopFlee()
+    {
+        m_Influenced = false;
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Terrain")  m_CanJump = true;
+        if (collision.gameObject.tag == "Terrain") m_CanJump = true;
     }
 
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.name == "Influence")
         {
-            m_JumpTimer = 0;
-            m_Influenced = true;
-            Flee(collider.gameObject);
+            StartFlee(collider.gameObject);
         }
 
         //Ok I'll behave, sorry eh
@@ -139,37 +181,16 @@ public class SheepBehaviour : MonoBehaviour
 
     void OnTriggerExit(Collider collider)
     {
+        if (collider.gameObject.name == "Influence")
+        {
+            StopFlee();
+        }
+
         //we're going rogue!
         if (collider.gameObject.tag == "Range" && !m_IsRogue)
         {
             m_ScoreManager.AddRogueSheep();
             m_IsRogue = true;
         }
-        if (collider.gameObject.name == "Influence")
-        {
-            m_Influenced = false;
-        }
-
-    }
-
-    public void Flee(GameObject herder)
-    {
-        m_Herder = herder;
-        if (m_FleeTimer <= 0)
-        {
-            m_FleeTimer = UnityEngine.Random.Range(1.5f, 3.0f);
-            m_Speed = UnityEngine.Random.Range(1.4f, 2.0f);
-        }
-        Vector3 moveDir = transform.position - m_Herder.transform.position;
-        moveDir.Normalize();
-        // moveDir = moveDir;
-        m_Direction = m_TargetDirection = moveDir;
-    }
-
-    public void StopFlee()
-    {
-        m_FleeTimer = 0;
-        m_Speed = 0;
-        m_UpdateTimer = UnityEngine.Random.Range(0.5f, 2.2f);
     }
 }
