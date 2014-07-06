@@ -21,7 +21,7 @@ public class BarkItem : IItem
 
         foreach (GameObject sh in sheep)
         {
-            sh.GetComponent<SheepBehaviour>().UltimatePanic();
+            sh.GetComponent<SheepBehaviour>().UltimatePanic(Target.GameObject);
         }
     }
 }

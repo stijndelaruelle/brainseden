@@ -4,6 +4,19 @@ using System.Collections;
 
 public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
 {
+    public GameObject GameObject
+    {
+        get
+        {
+            return gameObject;
+        }
+
+        set
+        {
+            //fuck this
+        }
+    }
+
     public Vector3 Position
     {
         get
