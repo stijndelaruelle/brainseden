@@ -7,12 +7,54 @@ ModelImporter:
     100002: Base HumanRibcage
     100004: Base HumanSpine
     100006: //RootNode
+    100008: Base Human
+    100010: Base HumanHead
+    100012: Base HumanLCalf
+    100014: Base HumanLCollarbone
+    100016: Base HumanLFoot
+    100018: Base HumanLForearm
+    100020: Base HumanLPalm
+    100022: Base HumanLPlatform
+    100024: Base HumanLThigh
+    100026: Base HumanLUpperarm
+    100028: Base HumanNeck
+    100030: Base HumanRCalf
+    100032: Base HumanRCollarbone
+    100034: Base HumanRFoot
+    100036: Base HumanRForearm
+    100038: Base HumanRPalm
+    100040: Base HumanRPlatform
+    100042: Base HumanRThigh
+    100044: Base HumanRUpperarm
+    100046: coyote
     400000: Base HumanPelvis
     400002: Base HumanRibcage
     400004: Base HumanSpine
     400006: //RootNode
+    400008: Base Human
+    400010: Base HumanHead
+    400012: Base HumanLCalf
+    400014: Base HumanLCollarbone
+    400016: Base HumanLFoot
+    400018: Base HumanLForearm
+    400020: Base HumanLPalm
+    400022: Base HumanLPlatform
+    400024: Base HumanLThigh
+    400026: Base HumanLUpperarm
+    400028: Base HumanNeck
+    400030: Base HumanRCalf
+    400032: Base HumanRCollarbone
+    400034: Base HumanRFoot
+    400036: Base HumanRForearm
+    400038: Base HumanRPalm
+    400040: Base HumanRPlatform
+    400042: Base HumanRThigh
+    400044: Base HumanRUpperarm
+    400046: coyote
+    4300000: coyote
     7400000: Take 001
     9500000: //RootNode
+    13700000: coyote
   materials:
     importMaterials: 1
     materialName: 0
