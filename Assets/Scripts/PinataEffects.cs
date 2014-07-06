@@ -12,9 +12,7 @@ public class PinataEffects : MonoBehaviour
 	public Mesh Damaged = null;
 	public Mesh NearDestroyed = null;
 
-	private Mesh _doll = null;
-
-	private int _damageState = 2;
+	private int _damageState = 0;
 
 	// Use this for initialization
 	void Start () 
@@ -28,14 +26,14 @@ public class PinataEffects : MonoBehaviour
 
 		_particles.Stop();
 
-		_animator = transform.GetComponent<Animator>();
+		_animator = transform.GetComponentInChildren<Animator>();
 
-		_doll =  transform.FindChild("Pinata_Root").
+		transform.FindChild("Pinata_Root").
 			FindChild("upperRope").
 			FindChild("middleRope").
 			FindChild("lowerRope").
 			FindChild("pinata").
-			FindChild("Doll").GetComponent<MeshFilter>().mesh;
+				FindChild("Doll").GetComponent<MeshFilter>().mesh=null;
 	}
 	
 	// Update is called once per frame
@@ -46,15 +44,20 @@ public class PinataEffects : MonoBehaviour
 
 		if(_timer>0.3)
 		{
-			_animator.SetBool("Shake",false);
 			_timer = 0;
 		}
 	}
 
 	public void Hit()
 	{
+		if(_timer>0)
+			return;
+
+		if(_damageState<0)
+			return;
+
 		_particles.Play();
-		_animator.SetBool("Shake",true);
+		_animator.SetTrigger("Shake");
 		_timer+=Time.deltaTime;
 
 		--_damageState;
@@ -62,11 +65,42 @@ public class PinataEffects : MonoBehaviour
 		switch (_damageState)
 		{
 		case 0:	
-			_doll = NearDestroyed;
+			transform.FindChild("Pinata_Root").
+				FindChild("upperRope").
+					FindChild("middleRope").
+					FindChild("lowerRope").
+					FindChild("pinata").
+					FindChild("Doll").GetComponent<MeshFilter>().mesh = NearDestroyed;
 			break;
 		case 1:
-			_doll = Damaged;
+			transform.FindChild("Pinata_Root").
+				FindChild("upperRope").
+					FindChild("middleRope").
+					FindChild("lowerRope").
+					FindChild("pinata").
+					FindChild("Doll").GetComponent<MeshFilter>().mesh = Damaged;
+
+			break;
+		case -1:
+			transform.FindChild("Pinata_Root").
+				FindChild("upperRope").
+					FindChild("middleRope").
+					FindChild("lowerRope").
+					FindChild("pinata").
+					FindChild("Doll").GetComponent<MeshFilter>().mesh = null;
 			break;
 		}
+	}
+
+	public void Reset()
+	{
+		_timer = 0;
+		_damageState= 2;
+		transform.FindChild("Pinata_Root").
+			FindChild("upperRope").
+				FindChild("middleRope").
+				FindChild("lowerRope").
+				FindChild("pinata").
+				FindChild("Doll").GetComponent<MeshFilter>().mesh=Full;
 	}
 }

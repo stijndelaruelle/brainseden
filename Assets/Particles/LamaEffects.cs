@@ -1,20 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CayotteEffectsBehavior : MonoBehaviour {
+public class LamaEffects : MonoBehaviour {
 
 	// Use this for initialization
-	void Start ()
+	void Start () 
 	{
-	    StartLine();
+	
 	}
 	
 	// Update is called once per frame
 	void Update () 
-    {
+	{
 	
 	}
-
+	
 	public void StartLine()
 	{
 		transform.GetComponentInChildren<DashLineBehaviour>().StartEffect();
@@ -22,11 +22,6 @@ public class CayotteEffectsBehavior : MonoBehaviour {
 	
 	public void EndLine()
 	{
-		transform.GetComponentInChildren<DashLineBehaviour>().EndEffect();
-	}
-
-	public void Shout()
-	{
-		transform.FindChild("Shout").GetComponent<ParticleSystem>().Play();
+		transform.GetComponentInChildren<DashLineBehaviour>().StartEffect();
 	}
 }

@@ -7,6 +7,7 @@ public class ScoreItem : IItem
 
     public bool OnPickup()
     {
+        Debug.Log("SCORE");
         Target.AddScore(20);
         return false;
     }
