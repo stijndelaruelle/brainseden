@@ -179,7 +179,7 @@ Transform:
   m_LocalScale: {x: 1.98443174, y: .743264139, z: 1.13437319}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
 --- !u!1 &98284676
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,7 +381,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
 --- !u!1 &176791378
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +439,7 @@ Transform:
   m_LocalScale: {x: 4.19558048, y: 1.57144439, z: 2.39834619}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
 --- !u!1001 &184570344
 Prefab:
   m_ObjectHideFlags: 0
@@ -691,7 +691,7 @@ Transform:
   m_LocalScale: {x: 1.95456958, y: .732079566, z: 1.11730289}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
 --- !u!1 &341976822
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,7 +749,65 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
+--- !u!1 &369668171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100008, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 369668172}
+  - 33: {fileID: 369668174}
+  - 23: {fileID: 369668173}
+  m_Layer: 0
+  m_Name: RopeBridge_Poles 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &369668172
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400008, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 369668171}
+  m_LocalRotation: {x: -.660771549, y: .0325393043, z: -.0210477225, w: .749585986}
+  m_LocalPosition: {x: 1.02103508, y: -.00365843438, z: -.00102881808}
+  m_LocalScale: {x: .999999762, y: 1.00000024, z: .999999821}
+  m_Children: []
+  m_Father: {fileID: 1319778805}
+  m_RootOrder: 6
+--- !u!23 &369668173
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300008, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 369668171}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 3e25c518195042e48a2b46579eab298d, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &369668174
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300008, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 369668171}
+  m_Mesh: {fileID: 4300044, guid: 559f04e93c8f9e24ab8f1e5dd1002eb3, type: 3}
 --- !u!1 &392847508
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,7 +865,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &463692567
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,11 +1044,127 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 480492811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -250, y: 0, z: -250}
+  m_LocalPosition: {x: -250, y: -50, z: -250}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
+--- !u!1 &502487273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100018, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 502487274}
+  - 33: {fileID: 502487276}
+  - 23: {fileID: 502487275}
+  m_Layer: 0
+  m_Name: RopeBridge_Planks 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &502487274
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400018, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 502487273}
+  m_LocalRotation: {x: .341903895, y: -.00891881343, z: .0245042201, w: .939373076}
+  m_LocalPosition: {x: .00423191953, y: -.16975601, z: -.779433668}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1319778805}
+  m_RootOrder: 1
+--- !u!23 &502487275
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300018, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 502487273}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 3e25c518195042e48a2b46579eab298d, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &502487276
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300018, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 502487273}
+  m_Mesh: {fileID: 4300028, guid: 559f04e93c8f9e24ab8f1e5dd1002eb3, type: 3}
+--- !u!1 &578294055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100004, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 578294056}
+  - 33: {fileID: 578294058}
+  - 23: {fileID: 578294057}
+  m_Layer: 0
+  m_Name: RopeBridgeRoops 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &578294056
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400004, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 578294055}
+  m_LocalRotation: {x: 1.54543116e-08, y: .707106829, z: -1.54543116e-08, w: .707106829}
+  m_LocalPosition: {x: 1.01697087, y: -.109348834, z: -1.01584947}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1319778805}
+  m_RootOrder: 8
+--- !u!23 &578294057
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300004, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 578294055}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 3e25c518195042e48a2b46579eab298d, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &578294058
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300004, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 578294055}
+  m_Mesh: {fileID: 4300032, guid: 559f04e93c8f9e24ab8f1e5dd1002eb3, type: 3}
 --- !u!1 &641511480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,7 +1222,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1 &693996386
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,7 +1280,7 @@ Transform:
   m_LocalScale: {x: 3.02493, y: 1.13298023, z: 1.72915983}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
 --- !u!1 &762656782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,7 +1338,7 @@ Transform:
   m_LocalScale: {x: 3.86584282, y: 1.44794285, z: 2.20985675}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
 --- !u!1001 &796493755
 Prefab:
   m_ObjectHideFlags: 0
@@ -1209,6 +1383,64 @@ Prefab:
   m_RootGameObject: {fileID: 1395463790}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &854701479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100020, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 854701480}
+  - 33: {fileID: 854701482}
+  - 23: {fileID: 854701481}
+  m_Layer: 0
+  m_Name: RopeBridge_Planks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &854701480
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400020, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 854701479}
+  m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+  m_LocalPosition: {x: .00295202434, y: 0, z: -.279154778}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1319778805}
+  m_RootOrder: 0
+--- !u!23 &854701481
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300020, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 854701479}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 3e25c518195042e48a2b46579eab298d, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &854701482
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300020, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 854701479}
+  m_Mesh: {fileID: 4300024, guid: 559f04e93c8f9e24ab8f1e5dd1002eb3, type: 3}
 --- !u!1001 &886897994
 Prefab:
   m_ObjectHideFlags: 0
@@ -1412,6 +1644,122 @@ Prefab:
   m_RootGameObject: {fileID: 1396368077}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1113688825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100016, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1113688826}
+  - 33: {fileID: 1113688828}
+  - 23: {fileID: 1113688827}
+  m_Layer: 0
+  m_Name: RopeBridge_Planks 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1113688826
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400016, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 1113688825}
+  m_LocalRotation: {x: .997083962, y: .0626178533, z: -.00273396354, w: -.0435337722}
+  m_LocalPosition: {x: .00295202434, y: -.735553741, z: -.934044957}
+  m_LocalScale: {x: 1, y: 1.00000012, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1319778805}
+  m_RootOrder: 2
+--- !u!23 &1113688827
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300016, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 1113688825}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 3e25c518195042e48a2b46579eab298d, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &1113688828
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300016, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 1113688825}
+  m_Mesh: {fileID: 4300030, guid: 559f04e93c8f9e24ab8f1e5dd1002eb3, type: 3}
+--- !u!1 &1162768459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100010, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1162768460}
+  - 33: {fileID: 1162768462}
+  - 23: {fileID: 1162768461}
+  m_Layer: 0
+  m_Name: RopeBridge_Poles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1162768460
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400010, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 1162768459}
+  m_LocalRotation: {x: .749830604, y: .0155543638, z: .0263071451, w: .66092366}
+  m_LocalPosition: {x: -1.03688848, y: -.0037704953, z: -.00122598605}
+  m_LocalScale: {x: -.999999821, y: -1, z: -.999999881}
+  m_Children: []
+  m_Father: {fileID: 1319778805}
+  m_RootOrder: 5
+--- !u!23 &1162768461
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300010, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 1162768459}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 3e25c518195042e48a2b46579eab298d, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &1162768462
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300010, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 1162768459}
+  m_Mesh: {fileID: 4300034, guid: 559f04e93c8f9e24ab8f1e5dd1002eb3, type: 3}
 --- !u!1001 &1169059577
 Prefab:
   m_ObjectHideFlags: 0
@@ -1529,7 +1877,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
 --- !u!1 &1193201758
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,7 +1935,7 @@ Transform:
   m_LocalScale: {x: .487639248, y: .487639159, z: .487639159}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 8
 --- !u!1 &1194474577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,6 +1994,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1282991944}
   m_RootOrder: 1
+--- !u!1 &1208947106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1208947109}
+  - 33: {fileID: 1208947108}
+  - 23: {fileID: 1208947107}
+  m_Layer: 0
+  m_Name: RopeBridgeRoops 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &1208947107
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 1208947106}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 3e25c518195042e48a2b46579eab298d, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &1208947108
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 1208947106}
+  m_Mesh: {fileID: 4300038, guid: 559f04e93c8f9e24ab8f1e5dd1002eb3, type: 3}
+--- !u!4 &1208947109
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 1208947106}
+  m_LocalRotation: {x: .707106829, y: 1.54543187e-08, z: .707106829, w: -1.54543187e-08}
+  m_LocalPosition: {x: -1.01697087, y: -.109348834, z: -1.01584935}
+  m_LocalScale: {x: -1, y: -1, z: -1}
+  m_Children: []
+  m_Father: {fileID: 1319778805}
+  m_RootOrder: 10
 --- !u!1 &1228194865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,7 +2140,7 @@ Transform:
   - {fileID: 938382464}
   - {fileID: 1194474580}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!23 &1282991945
 Renderer:
   m_ObjectHideFlags: 0
@@ -1764,6 +2170,44 @@ MeshFilter:
   m_PrefabInternal: {fileID: 2051870619}
   m_GameObject: {fileID: 1282991943}
   m_Mesh: {fileID: 4300000, guid: db7a0b3ea389bba43bf73bbaf3434f51, type: 3}
+--- !u!1 &1319778804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100022, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1319778805}
+  m_Layer: 0
+  m_Name: RopeBridge01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1319778805
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400022, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 1319778804}
+  m_LocalRotation: {x: .000294733181, y: -.999969721, z: -.00287314062, w: -.00722773606}
+  m_LocalPosition: {x: .115455896, y: -.0216048751, z: .983643889}
+  m_LocalScale: {x: 1.15397668, y: 1, z: 1.30333257}
+  m_Children:
+  - {fileID: 854701480}
+  - {fileID: 502487274}
+  - {fileID: 1113688826}
+  - {fileID: 1926436609}
+  - {fileID: 1956345559}
+  - {fileID: 1162768460}
+  - {fileID: 369668172}
+  - {fileID: 2095442827}
+  - {fileID: 578294056}
+  - {fileID: 2081021598}
+  - {fileID: 1208947109}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!1001 &1334555912
 Prefab:
   m_ObjectHideFlags: 0
@@ -1865,7 +2309,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &1368250955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1923,7 +2367,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!1 &1395463790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1954,7 +2398,7 @@ Transform:
   - {fileID: 1634266298}
   - {fileID: 265903562}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!23 &1395463792
 Renderer:
   m_ObjectHideFlags: 0
@@ -2041,7 +2485,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1001 &1414476925
 Prefab:
   m_ObjectHideFlags: 0
@@ -2195,7 +2639,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!1 &1634266295
 GameObject:
   m_ObjectHideFlags: 0
@@ -2376,7 +2820,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
 --- !u!1 &1792255787
 GameObject:
   m_ObjectHideFlags: 0
@@ -2434,7 +2878,109 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
+--- !u!1001 &1878516097
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400022, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .115455896
+      objectReference: {fileID: 0}
+    - target: {fileID: 400022, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.0216048751
+      objectReference: {fileID: 0}
+    - target: {fileID: 400022, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: .983643889
+      objectReference: {fileID: 0}
+    - target: {fileID: 400022, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: .000294733181
+      objectReference: {fileID: 0}
+    - target: {fileID: 400022, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -.999969721
+      objectReference: {fileID: 0}
+    - target: {fileID: 400022, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -.00287314062
+      objectReference: {fileID: 0}
+    - target: {fileID: 400022, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -.00722773606
+      objectReference: {fileID: 0}
+    - target: {fileID: 400022, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+      propertyPath: m_RootMapOrder
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_RootGameObject: {fileID: 1319778804}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
+--- !u!1 &1926436608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100014, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1926436609}
+  - 33: {fileID: 1926436611}
+  - 23: {fileID: 1926436610}
+  m_Layer: 0
+  m_Name: RopeBridge_Planks 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1926436609
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400014, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 1926436608}
+  m_LocalRotation: {x: .999042451, y: .00339823659, z: -.0053099324, w: -.0432950743}
+  m_LocalPosition: {x: .0038273707, y: -1.36957967, z: -.989089012}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1319778805}
+  m_RootOrder: 3
+--- !u!23 &1926436610
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300014, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 1926436608}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 3e25c518195042e48a2b46579eab298d, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &1926436611
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300014, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 1926436608}
+  m_Mesh: {fileID: 4300040, guid: 559f04e93c8f9e24ab8f1e5dd1002eb3, type: 3}
 --- !u!1 &1942255834
 GameObject:
   m_ObjectHideFlags: 0
@@ -2464,7 +3010,65 @@ Transform:
   - {fileID: 1997734781}
   - {fileID: 1976821703}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
+--- !u!1 &1956345558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100012, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1956345559}
+  - 33: {fileID: 1956345561}
+  - 23: {fileID: 1956345560}
+  m_Layer: 0
+  m_Name: RopeBridge_Planks 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1956345559
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400012, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 1956345558}
+  m_LocalRotation: {x: .999042451, y: .00339823682, z: -.0053099324, w: -.0432950743}
+  m_LocalPosition: {x: .00319949118, y: -1.27076554, z: -.98050493}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1319778805}
+  m_RootOrder: 4
+--- !u!23 &1956345560
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300012, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 1956345558}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 3e25c518195042e48a2b46579eab298d, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &1956345561
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300012, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 1956345558}
+  m_Mesh: {fileID: 4300042, guid: 559f04e93c8f9e24ab8f1e5dd1002eb3, type: 3}
 --- !u!1001 &1974371620
 Prefab:
   m_ObjectHideFlags: 0
@@ -2506,7 +3110,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: c2bf90dd2fa654441b308edc2c41221a, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c2bf90dd2fa654441b308edc2c41221a, type: 2}
@@ -2659,6 +3263,64 @@ Prefab:
   m_RootGameObject: {fileID: 1282991943}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &2081021597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2081021598}
+  - 33: {fileID: 2081021600}
+  - 23: {fileID: 2081021599}
+  m_Layer: 0
+  m_Name: RopeBridgeRoops 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2081021598
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 2081021597}
+  m_LocalRotation: {x: .707106829, y: 1.54543187e-08, z: .707106829, w: -1.54543187e-08}
+  m_LocalPosition: {x: -1.01697087, y: .8716079, z: -1.01584935}
+  m_LocalScale: {x: -1, y: -1, z: -1}
+  m_Children: []
+  m_Father: {fileID: 1319778805}
+  m_RootOrder: 9
+--- !u!23 &2081021599
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300002, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 2081021597}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 3e25c518195042e48a2b46579eab298d, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &2081021600
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300002, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 2081021597}
+  m_Mesh: {fileID: 4300036, guid: 559f04e93c8f9e24ab8f1e5dd1002eb3, type: 3}
 --- !u!1001 &2085418339
 Prefab:
   m_ObjectHideFlags: 0
@@ -2707,6 +3369,64 @@ Prefab:
   m_RootGameObject: {fileID: 69057798}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &2095442826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100006, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2095442827}
+  - 33: {fileID: 2095442829}
+  - 23: {fileID: 2095442828}
+  m_Layer: 0
+  m_Name: RopeBridgeRoops
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2095442827
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400006, guid: ea55df821ecb0864bbffc22e94e6fe2d, type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 2095442826}
+  m_LocalRotation: {x: 1.54543116e-08, y: .707106829, z: -1.54543116e-08, w: .707106829}
+  m_LocalPosition: {x: 1.01697087, y: .871607959, z: -1.01584947}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1319778805}
+  m_RootOrder: 7
+--- !u!23 &2095442828
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300006, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 2095442826}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 3e25c518195042e48a2b46579eab298d, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &2095442829
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300006, guid: ea55df821ecb0864bbffc22e94e6fe2d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1878516097}
+  m_GameObject: {fileID: 2095442826}
+  m_Mesh: {fileID: 4300026, guid: 559f04e93c8f9e24ab8f1e5dd1002eb3, type: 3}
 --- !u!1001 &2125043398
 Prefab:
   m_ObjectHideFlags: 0
