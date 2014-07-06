@@ -22,6 +22,7 @@ public class PickupBehaviour : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         IPlayer player = null;
+
         if (collision.gameObject.tag == "Shepherd")     player = collision.gameObject.GetComponent<ShepherdBehaviour>() as IPlayer;
         if (collision.gameObject.tag == "PlayerSheep")  player = collision.gameObject.GetComponent<PlayerSheepBehaviour>() as IPlayer;
 
