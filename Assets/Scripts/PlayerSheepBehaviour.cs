@@ -52,7 +52,7 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
         //Jump (this will be an animation)
         if (Input.GetButtonDown("Player2_Jump") && m_CanJump)
         {
-            rigidbody.AddForce(Vector3.up * m_JumpVelocity * Time.deltaTime, ForceMode.Acceleration);
+            rigidbody.AddForce(Vector3.up * m_JumpVelocity, ForceMode.Acceleration);
             m_CanJump = false;
         }
 
@@ -61,6 +61,15 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
         {
             m_Item.Activate();
             m_Item = null;
+        }
+
+        if (Math.Abs(rigidbody.velocity.x + rigidbody.velocity.y) < 0.01f)
+        {
+            GetComponentInChildren<Animator>().SetBool("IsWalking", false);
+        }
+        else
+        {
+            GetComponentInChildren<Animator>().SetBool("IsWalking", true);
         }
 	}
 
