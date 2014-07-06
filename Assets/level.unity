@@ -211,7 +211,7 @@ Transform:
   m_PrefabInternal: {fileID: 957595608}
   m_GameObject: {fileID: 45596606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.72675419, y: 10, z: 19.2961617}
+  m_LocalPosition: {x: -337.669556, y: 10.9071045, z: 16.504425}
   m_LocalScale: {x: 20, y: 20, z: 20}
   m_Children:
   - {fileID: 14579845}
@@ -361,15 +361,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 2ec8d60e919d84a47aad8bbd2e02454d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.72675419
+      value: -337.669556
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2ec8d60e919d84a47aad8bbd2e02454d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 10.9071045
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2ec8d60e919d84a47aad8bbd2e02454d, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 19.2961617
+      value: 16.504425
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2ec8d60e919d84a47aad8bbd2e02454d, type: 2}
       propertyPath: m_LocalRotation.x
@@ -556,6 +556,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33092d1df075d844690f10df92696b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_BaseSpeed: 1500
+  m_SprintSpeed: 2500
 --- !u!23 &1302973437
 Renderer:
   m_ObjectHideFlags: 0
@@ -609,7 +611,7 @@ GameObject:
   - 154: {fileID: 1514971946}
   m_Layer: 0
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

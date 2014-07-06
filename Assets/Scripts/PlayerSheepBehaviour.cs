@@ -4,6 +4,9 @@ using System.Collections;
 
 public class PlayerSheepBehaviour : MonoBehaviour 
 {
+    public float m_BaseSpeed = 1500.0f;
+    public float m_SprintSpeed = 2500.0f;
+
     private bool m_CanJump;
 
     private ScoreManager m_ScoreManager;
@@ -22,8 +25,12 @@ public class PlayerSheepBehaviour : MonoBehaviour
         float horizontal = Input.GetAxis("Player2_Horizontal");
         float vertical = Input.GetAxis("Player2_Vertical");
 
-        rigidbody.AddForce(Vector3.right * horizontal * 2000.0f, ForceMode.Acceleration);
-        rigidbody.AddForce(Vector3.forward * vertical * 2000.0f, ForceMode.Acceleration);
+        float speed = m_BaseSpeed;
+        if (Input.GetButton("Player2_Sprint")) speed = m_SprintSpeed;
+
+        Debug.Log(speed);
+        rigidbody.AddForce(Vector3.right * horizontal * speed, ForceMode.Acceleration);
+        rigidbody.AddForce(Vector3.forward * vertical * speed, ForceMode.Acceleration);
 
         transform.LookAt(transform.position + new Vector3(horizontal, 0.0f, vertical));
 
