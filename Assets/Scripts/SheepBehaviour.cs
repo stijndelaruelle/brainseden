@@ -119,15 +119,13 @@ public class SheepBehaviour : MonoBehaviour
             if (!m_Influenced)
             {
                 m_FleeTimer = 0;
+                m_Speed = 0;
                 return false;
             }
             
-            if (m_IsRogue)
-            {
-                // We are influenced and rogue, start fleeing
-                m_FleeTimer = UnityEngine.Random.Range(0.2f, 0.5f);
-                canRun = true;
-            }
+            // We are influenced and rogue, start fleeing
+            m_FleeTimer = UnityEngine.Random.Range(0.2f, 0.5f);
+            canRun = true;
         }
 
         if (canRun)
@@ -145,6 +143,7 @@ public class SheepBehaviour : MonoBehaviour
             m_Direction = m_TargetDirection = moveDir;
             return true;
         }
+
         return false;
     }
 
