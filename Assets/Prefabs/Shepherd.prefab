@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa419146271f37448ce55c7c67e24ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_BaseSpeed: 150000
+  m_SprintSpeed: 30000
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -136,7 +138,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 4
+  m_Radius: 6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security.Principal;
 using UnityEngine;
 using System.Collections;
 
@@ -15,9 +14,6 @@ public class SheepBehaviour : MonoBehaviour
 
     public float m_MaxFleeSpeed;
     public float m_MinFleeSpeed;
-
-    public float m_MaxRunSpeed;
-    public float m_MinRunSpeed;
 
     private bool m_Moving;
     private bool m_CanJump;
@@ -89,7 +85,7 @@ public class SheepBehaviour : MonoBehaviour
                 {
                     float angle = UnityEngine.Random.Range(0, 360);
                     m_TargetDirection = Quaternion.AngleAxis(angle, Vector3.up) * Vector3.forward;
-                    m_Speed = UnityEngine.Random.Range(m_MinRunSpeed, m_MaxRunSpeed);
+                    m_Speed = UnityEngine.Random.Range(0.2f, 0.8f);
                 }
                 else
                 {
@@ -109,7 +105,7 @@ public class SheepBehaviour : MonoBehaviour
         }
 
         transform.LookAt(transform.position + m_Direction);
-        transform.position = transform.position + m_Direction*m_Speed*Time.deltaTime;
+        transform.position = transform.position + m_Direction*m_Speed;
     }
 
     public bool HandleFlee()
@@ -127,15 +123,24 @@ public class SheepBehaviour : MonoBehaviour
                 m_Speed = 0;
                 return false;
             }
-            else if (!m_Influenced)
-            {
-                m_FleeTimer = 0;
-                return false;
-            }
+<<<<<<< Updated upstream
             
             // We are influenced and rogue, start fleeing
             m_FleeTimer = UnityEngine.Random.Range(0.2f, 0.5f);
             canRun = true;
+=======
+
+            if (m_IsRogue)
+            {
+                // We are influenced and rogue, start fleeing
+                m_FleeTimer = UnityEngine.Random.Range(0.2f, 0.5f);
+                canRun = true;
+            }
+            else
+            {
+                return false;
+            }
+>>>>>>> Stashed changes
         }
 
         if (canRun)
