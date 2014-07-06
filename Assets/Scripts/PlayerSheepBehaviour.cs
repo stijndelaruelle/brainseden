@@ -19,6 +19,7 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
 
     public float m_BaseSpeed = 15000.0f;
     public float m_SprintSpeed = 25000.0f;
+    public float m_JumpVelocity;
 
     private bool m_CanJump;
 
@@ -51,7 +52,7 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
         //Jump (this will be an animation)
         if (Input.GetButtonDown("Player2_Jump") && m_CanJump)
         {
-            rigidbody.AddForce(Vector3.up * 2000.0f, ForceMode.Acceleration);
+            rigidbody.AddForce(Vector3.up * m_JumpVelocity * Time.deltaTime, ForceMode.Acceleration);
             m_CanJump = false;
         }
 
