@@ -8,16 +8,20 @@ public class Pinata : MonoBehaviour
     private float m_Countdown;
     private Collider m_PrevCollider;
 
-	// Use this for initialization
-	void Start () 
-	{
+    private bool m_Respawn;
 
-	}
-	
-	// Update is called once per frame
-	void Update () 
+    private bool m_Removing = false;
+    private float m_RemoveTimer;
+    private float m_RemoveDelay;
+    private bool m_CanBeDestroyed;
+
+	// Use this for initialization
+	void Start ()
 	{
-        if (m_Countdown > 0.0f) m_Countdown -= Time.deltaTime;
+	    m_RemoveDelay = 0;
+	    m_RemoveTimer = 0;
+	    m_Removing = false;
+	    m_CanBeDestroyed = false;
 	}
 
 	void OnTriggerEnter(Collider collider)
@@ -56,6 +60,58 @@ public class Pinata : MonoBehaviour
 
 	public void Reset()
 	{
-		gameObject.GetComponent<PinataEffects>().Reset();
+	    m_Respawn = true;
 	}
+
+    void Update()
+    {
+        if (m_Countdown > 0.0f) 
+            m_Countdown -= Time.deltaTime;
+
+        if (m_Respawn)
+        {
+            gameObject.GetComponent<PinataEffects>().Reset();
+            m_Respawn = false;
+        }
+
+        if (!m_Removing && gameObject.GetComponent<PinataEffects>().IsBroken() && m_RemoveDelay <= 0)
+            m_RemoveDelay = 3.0f;
+
+        if (!m_Removing && m_RemoveDelay > 0)
+        {
+            m_RemoveDelay -= Time.deltaTime;
+            if (m_RemoveDelay <= 0)
+            {
+                Fly();
+                m_RemoveDelay = 0;
+            }
+        }
+
+        if (m_Removing)
+        {
+            m_RemoveTimer -= Time.deltaTime;
+            if (m_RemoveTimer <= 0)
+            {
+                gameObject.GetComponent<PinataEffects>().StopFly();
+                m_Respawn = false;
+                gameObject.SetActive(false);
+                m_RemoveTimer = 0;
+                m_Removing = false;
+                gameObject.active = false;
+                m_CanBeDestroyed = true;
+            }
+        }
+    }
+
+    public void Fly()
+    {
+        gameObject.GetComponent<PinataEffects>().Fly();
+        m_Removing = true;
+        m_RemoveTimer = 1.5f;
+    }
+
+    public bool CanIBeDestroyed()
+    {
+        return m_CanBeDestroyed;
+    }
 }
