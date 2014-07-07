@@ -16,5 +16,6 @@ public class CloudItem : IItem
         //On activate we spawn a cloud!
         //(test just give score again)
         MonoBehaviour.Instantiate(Resources.Load("Cloud", typeof(GameObject)), new Vector3(Target.Position.x, 1.0f, Target.Position.z), Quaternion.identity);
+        SoundManager.PlaySound("LamaTaunt",Target.GameObject,0.2f);
     }
 }
