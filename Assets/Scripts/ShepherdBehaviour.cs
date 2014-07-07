@@ -97,8 +97,8 @@ public class ShepherdBehaviour : MonoBehaviour, IPlayer
             m_Item = null;
         }
 
-		if (VectorsApproxEqual(transform.position,_previousPos,0.5))
-        {
+		if (Math.Abs(horizontal + vertical) < 0.05f)
+		{
             GetComponentInChildren<Animator>().SetBool("IsRunning", false);
         }
         else
