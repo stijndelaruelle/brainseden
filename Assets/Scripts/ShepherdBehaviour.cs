@@ -81,6 +81,7 @@ public class ShepherdBehaviour : MonoBehaviour, IPlayer
         //Stop dashing
         if (m_IsDashing && m_DashTimer <= 0.0f)
         {
+            SoundManager.PlaySound("CoyoteBreathing", null, 0.8f);
             m_IsDashing = false;
             m_DashTimer = m_DashCooldown;
         }

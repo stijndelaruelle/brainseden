@@ -17,11 +17,11 @@ public class SoundManager : MonoBehaviour
         }
 	}
 
-    public static void PlaySound(string name)
+    public static void PlaySound(string name, GameObject posObject = null, float volume = 4.0f)
     {
         if (m_SoundEvents.ContainsKey(name))
         {
-            m_SoundEvents[name].PlaySound();
+            m_SoundEvents[name].PlaySound(posObject, volume);
         }
     }
 }

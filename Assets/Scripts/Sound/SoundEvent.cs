@@ -14,13 +14,13 @@ public class SoundEvent : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	public void PlaySound()
+    public void PlaySound(GameObject posObject = null, float volume = 4.0f)
 	{
 	    int amountOfSounds = m_Sounds.Count;
 	    if (amountOfSounds > 0)
 	    {
 	        m_CurrentID = (m_CurrentID + 1) % amountOfSounds;
-	        AudioSource.PlayClipAtPoint(m_Sounds[m_CurrentID], Vector3.zero);
+            AudioSource.PlayClipAtPoint(m_Sounds[m_CurrentID], posObject != null ? posObject.transform.position : Vector3.zero, volume);
 	    }
 	}
 }

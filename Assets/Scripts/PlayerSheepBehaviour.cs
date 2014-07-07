@@ -41,6 +41,8 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
 
     private IItem m_Item;
 
+    private float m_SoundTimer;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -48,8 +50,10 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void Update ()
 	{
+	    HandleSound();
+
         if (m_ScoreManager.Victory) return;
 
         //Move
@@ -141,5 +145,15 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
     {
         m_ScoreManager.AddScoreSheep(amount);
 
+    }
+
+    void HandleSound()
+    {
+        m_SoundTimer -= Time.deltaTime;
+        if (m_SoundTimer <= 0)
+        {
+            m_SoundTimer = UnityEngine.Random.Range(4.0f, 8.0f);
+            SoundManager.PlaySound("LamaSound", gameObject, UnityEngine.Random.Range(3.0f, 4.5f));
+        }
     }
 }
