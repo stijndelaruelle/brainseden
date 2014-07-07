@@ -57,7 +57,15 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
         float vertical = Input.GetAxis("Player2_Vertical");
 
         float speed = m_BaseSpeed;
-        if (Input.GetButton("Player2_Sprint")) speed = m_SprintSpeed;
+        if (Input.GetButton("Player2_Sprint"))
+		{
+			speed = m_SprintSpeed;
+			transform.GetComponentInChildren<DashLineBehaviour>().StartEffect();
+		}
+		else
+		{
+			transform.GetComponentInChildren<DashLineBehaviour>().EndEffect();
+		}
 
         rigidbody.AddForce(Vector3.right * horizontal * speed * Time.deltaTime, ForceMode.Acceleration);
         rigidbody.AddForce(Vector3.forward * vertical * speed * Time.deltaTime, ForceMode.Acceleration);
