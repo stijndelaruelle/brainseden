@@ -46,7 +46,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
   m_Layer: 0
-  m_Name: GLOBALS
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,9 +154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27399efe2c3ce24d83dc544da874ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Pinatas: []
-  m_MaxSpawnTime: 40
-  m_MinSpawnTime: 30
+  m_PinataGameObject: {fileID: 100022, guid: 4776a4b340e4be248b769a9230a85429, type: 2}
+  m_PinataSpawns: []
+  m_MaxSpawnTime: 25
+  m_MinSpawnTime: 10
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
