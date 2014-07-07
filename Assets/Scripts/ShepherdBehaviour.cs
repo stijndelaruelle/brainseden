@@ -43,6 +43,8 @@ public class ShepherdBehaviour : MonoBehaviour, IPlayer
     private IItem m_Item;
     private ScoreManager m_ScoreManager;
 
+	private Vector3 _previousPos = Vector3.zero;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -95,7 +97,7 @@ public class ShepherdBehaviour : MonoBehaviour, IPlayer
             m_Item = null;
         }
 
-        if (Math.Abs(rigidbody.velocity.x + rigidbody.velocity.y) < 0.01f)
+		if (VectorsApproxEqual(transform.position,_previousPos,0.5))
         {
             GetComponentInChildren<Animator>().SetBool("IsRunning", false);
         }
@@ -103,6 +105,20 @@ public class ShepherdBehaviour : MonoBehaviour, IPlayer
         {
             GetComponentInChildren<Animator>().SetBool("IsRunning", true);
         }
+
+		_previousPos = transform.position;
+	}
+
+	static public bool VectorsApproxEqual(Vector3 a, Vector3 b, double eps)
+	{
+		bool result = false;
+		
+		if(a.x + eps > b.x && a.x - eps < b.x) 
+			if(a.y + eps > b.y && a.y - eps < b.y)
+				if(a.z + eps > b.z && a.z - eps < b.z)
+					result = true;
+		
+		return result;
 	}
 
     //--------------------------
