@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: SoundSystem
   m_TagString: Untagged
@@ -56,6 +57,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7272e220968021642b1a1b1fa6c2b11d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97f30f3d2c48e184593a1f4e5b610c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SoundEventName: CoyoteShout
+  m_Sounds:
+  - {fileID: 8300000, guid: 6efd665e0dc11ab44b84490302fb4410, type: 3}
+  - {fileID: 8300000, guid: 758a1886a03a5274f9e085b89212588d, type: 3}
+  - {fileID: 8300000, guid: a29918588e75edb4cb169bf8dbb82f9b, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -50,6 +50,8 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
 	// Update is called once per frame
 	void Update () 
 	{
+        if (m_ScoreManager.Victory) return;
+
         //Move
         float horizontal = Input.GetAxis("Player2_Horizontal");
         float vertical = Input.GetAxis("Player2_Vertical");
@@ -76,8 +78,8 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
             m_Item = null;
         }
 
-        if (Math.Abs(rigidbody.velocity.x + rigidbody.velocity.y) < 0.01f)
-        {
+        if (Math.Abs(horizontal + vertical) < 0.05f)
+		{
             GetComponentInChildren<Animator>().SetBool("IsWalking", false);
         }
         else
