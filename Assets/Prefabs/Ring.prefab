@@ -14,7 +14,7 @@ GameObject:
   m_Layer: 0
   m_Name: Ring
   m_TagString: Range
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1003283189, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -46,7 +46,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
   m_Layer: 0
-  m_Name: 
+  m_Name: GLOBALS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,7 +128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60fe6713f1e5e1b469a06f395e4dfa11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShepherdPrefab: {fileID: 100002, guid: 2ec8d60e919d84a47aad8bbd2e02454d, type: 2}
   m_PlayerSheepPrefab: {fileID: 100000, guid: 25994deebd124604a88e0ca0cb64317a, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
