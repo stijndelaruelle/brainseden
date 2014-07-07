@@ -21,5 +21,8 @@ public class BarkItem : IItem
         {
             sh.GetComponent<SheepBehaviour>().UltimatePanic(Target.GameObject);
         }
+
+        Target.GameObject.GetComponentInChildren<CayotteEffectsBehavior>().Shout();
+        SoundManager.PlaySound("CoyoteShout");
     }
 }
