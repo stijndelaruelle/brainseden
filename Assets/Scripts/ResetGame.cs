@@ -17,6 +17,6 @@ public class ResetGame : MonoBehaviour
             Application.LoadLevel(0);
 
 	    if (Input.GetButtonDown("Reset"))
-	        Application.LoadLevel(1);
+	        Application.LoadLevel(2);
 	}
 }
