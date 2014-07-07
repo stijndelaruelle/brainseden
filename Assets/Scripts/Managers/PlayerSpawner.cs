@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 public class PlayerSpawner : MonoBehaviour 
 {
-    public GameObject m_ShepherdPrefab;
+    //public GameObject m_ShepherdPrefab;
     public GameObject m_PlayerSheepPrefab;
 
 	// Use this for initialization
@@ -16,17 +16,17 @@ public class PlayerSpawner : MonoBehaviour
         //---------------------------
 	    // Spawn the shepherd player
         //---------------------------
-        int min = (int)(radius + (radius / 10.0f));
-        int max = (int)(radius + (radius / 2.0f));
-        int randX = Random.Range(min, max);
-        int randZ = Random.Range(min, max);
+        //int min = (int)(radius + (radius / 10.0f));
+        //int max = (int)(radius + (radius / 2.0f));
+        //int randX = Random.Range(min, max);
+        //int randZ = Random.Range(min, max);
 
-        int negateX = Random.Range(0, 2);
-        int negateZ = Random.Range(0, 2);
-        if (negateX == 0) randX *= -1;
-        if (negateZ == 0) randZ *= -1;
+        //int negateX = Random.Range(0, 2);
+        //int negateZ = Random.Range(0, 2);
+        //if (negateX == 0) randX *= -1;
+        //if (negateZ == 0) randZ *= -1;
 
-        Instantiate(m_ShepherdPrefab, new Vector3(randX + transform.parent.position.x, 0.0f, randZ + transform.parent.position.z), Quaternion.identity);
+        //Instantiate(m_ShepherdPrefab, new Vector3(randX + transform.parent.position.x, 0.0f, randZ + transform.parent.position.z), Quaternion.identity);
 
         //---------------------------
 	    // Spawn the sheep player
