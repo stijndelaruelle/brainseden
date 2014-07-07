@@ -5,7 +5,7 @@ public class StartButton : MonoBehaviour, IButton
 {
     public void OnMouseDown()
     {
-        Application.LoadLevel(1);
+        Application.LoadLevel(2);
     }
 
     public void OnMouseEnter()

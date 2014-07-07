@@ -62,7 +62,7 @@ public class ScoreManager : MonoBehaviour
         {
             if (Input.GetButtonDown("Player1_Sprint") || Input.GetButtonDown("Player2_Sprint"))
             {
-                Application.LoadLevel(1);
+                Application.LoadLevel(2);
             }
         }
         else
