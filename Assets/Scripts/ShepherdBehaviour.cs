@@ -95,6 +95,7 @@ public class ShepherdBehaviour : MonoBehaviour, IPlayer
         //Use item
         if (Input.GetButtonDown("Player1_Fire") && m_Item != null)
         {
+            m_ScoreManager.HideShepherdPickup();
             m_Item.Activate();
             m_Item = null;
         }
@@ -129,6 +130,7 @@ public class ShepherdBehaviour : MonoBehaviour, IPlayer
     public void SetItem(IItem item)
     {
         m_Item = item;
+        m_ScoreManager.ShowShepherdPickup();
     }
 
     public void AddScore(int amount)

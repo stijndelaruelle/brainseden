@@ -33,6 +33,9 @@ public class ScoreManager : MonoBehaviour
     private SpriteRenderer m_ShepherdVictory;
     private SpriteRenderer m_SheepVictory;
 
+    private SpriteRenderer m_ShepherdPickup;
+    private SpriteRenderer m_SheepPickup;
+
 	void Start () 
 	{
         m_Border = transform.Find("ProgressBar").GetComponent<SpriteRenderer>();
@@ -43,6 +46,9 @@ public class ScoreManager : MonoBehaviour
 
         m_ShepherdVictory = transform.Find("Victory_Coyote").GetComponent<SpriteRenderer>();
         m_SheepVictory = transform.Find("Victory_Lamas").GetComponent<SpriteRenderer>();
+
+        m_ShepherdPickup = transform.Find("Face_Coyote").GetComponent<SpriteRenderer>();
+        m_SheepPickup = transform.Find("Face_Lama").GetComponent<SpriteRenderer>();
 
         ShepherdScore = 50;
         SheepScore = 50;
@@ -64,7 +70,7 @@ public class ScoreManager : MonoBehaviour
             if (m_Timer <= 0.0f)
             {
                 if (m_RogueSheep > 0) AddScoreSheep(1 * m_RogueSheep);
-                else AddScoreShepherd(20);
+                else AddScoreShepherd(2);
 
                 m_Timer = 1.0f;
             }
@@ -149,5 +155,25 @@ public class ScoreManager : MonoBehaviour
         //Depending on who won show the right image
         if (ShepherdScore >= 100)   m_ShepherdVictory.enabled = true;
         else                        m_SheepVictory.enabled = true;
+    }
+
+    public void ShowSheepPickup()
+    {
+        m_SheepPickup.enabled = true;
+    }
+
+    public void HideSheepPickup()
+    {
+        m_SheepPickup.enabled = false;
+    }
+
+    public void ShowShepherdPickup()
+    {
+        m_ShepherdPickup.enabled = true;
+    }
+
+    public void HideShepherdPickup()
+    {
+        m_ShepherdPickup.enabled = false;
     }
 }
