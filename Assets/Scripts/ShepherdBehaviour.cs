@@ -54,6 +54,8 @@ public class ShepherdBehaviour : MonoBehaviour, IPlayer
 	// Update is called once per frame
 	void Update ()
     {
+        if (m_ScoreManager.Victory) return;
+
         float speed = m_BaseSpeed;
 
         float horizontal = Input.GetAxis("Player1_Horizontal");

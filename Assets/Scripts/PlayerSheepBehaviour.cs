@@ -50,6 +50,8 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
 	// Update is called once per frame
 	void Update () 
 	{
+        if (m_ScoreManager.Victory) return;
+
         //Move
         float horizontal = Input.GetAxis("Player2_Horizontal");
         float vertical = Input.GetAxis("Player2_Vertical");
