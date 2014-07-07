@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class ButtonManager : MonoBehaviour 
 {
     private List<IButton> m_Buttons;
+    private IButton m_Credits;
+
     private int m_Selected = 0;
     private bool m_HasMoved = false;
 
@@ -15,7 +17,7 @@ public class ButtonManager : MonoBehaviour
         m_Buttons.Add(GameObject.Find("Button_Controls").GetComponent<ControlButton>() as IButton);
         m_Buttons.Add(GameObject.Find("Button_Quit").GetComponent<QuitButton>() as IButton);
 
-        Debug.Log(m_Buttons[1]);
+        m_Credits = GameObject.Find("Button_Credits").GetComponent<CreditsButton>() as IButton;
     }
 
 	// Update is called once per frame
@@ -25,6 +27,11 @@ public class ButtonManager : MonoBehaviour
         if (Input.GetButtonDown("Player1_Sprint"))
         {
             m_Buttons[m_Selected].OnMouseDown();
+        }
+
+        if (Input.GetButtonDown("Credits"))
+        {
+            m_Credits.OnMouseDown();
         }
 
         //Move up/down
