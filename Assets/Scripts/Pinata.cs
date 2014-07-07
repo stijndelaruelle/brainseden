@@ -8,6 +8,8 @@ public class Pinata : MonoBehaviour
     private float m_Countdown;
     private Collider m_PrevCollider;
 
+    private int m_Health = 3;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -38,14 +40,16 @@ public class Pinata : MonoBehaviour
 
         //Fire some point pickups
         GameObject pickup = Instantiate(m_PickupPrefab, transform.position, Quaternion.identity) as GameObject;
-		if (collider.gameObject.tag == "Shepherd") 
-		{ 
-			pickup.GetComponent<PickupBehaviour>().Type = PickupBehaviour.PickupType.Bark; 
-		}
-		else                                           
-		{ 
-			pickup.GetComponent<PickupBehaviour>().Type = PickupBehaviour.PickupType.Cloud; 
-		}
+        --m_Health;
+
+        if (m_Health < 0)
+        {
+            if (collider.gameObject.tag == "Shepherd") pickup.GetComponent<PickupBehaviour>().Type = PickupBehaviour.PickupType.Bark;
+            else pickup.GetComponent<PickupBehaviour>().Type = PickupBehaviour.PickupType.Cloud;
+
+            m_Health = 3;
+        }
+                                      
         pickup.rigidbody.AddForce(new Vector3(randX, randY, randZ));
 
 
