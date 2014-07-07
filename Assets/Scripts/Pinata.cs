@@ -32,33 +32,29 @@ public class Pinata : MonoBehaviour
         if (collider.gameObject.tag != "Shepherd" && collider.gameObject.tag != "PlayerSheep") return;
         if (m_PrevCollider == collider && m_Countdown > 0.0f) return;
 
-
-        //Random direction
-        int randX = Random.Range(25, 100);
-        int randY = Random.Range(100, 500);
-        int randZ = Random.Range(25, 100);
-
-        int negateX = Random.Range(0, 2);
-        int negateZ = Random.Range(0, 2);
-        if (negateX == 0) randX *= -1;
-        if (negateZ == 0) randZ *= -1;
-
-        //Fire some point pickups
-        GameObject pickup = Instantiate(m_PickupPrefab, transform.position, Quaternion.identity) as GameObject;
-		if (collider.gameObject.tag == "Shepherd") 
-		{ 
-			pickup.GetComponent<PickupBehaviour>().Type = PickupBehaviour.PickupType.Bark; 
-		}
-		else                                           
-		{ 
-			pickup.GetComponent<PickupBehaviour>().Type = PickupBehaviour.PickupType.Cloud; 
-		}
-        pickup.rigidbody.AddForce(new Vector3(randX, randY, randZ));
-
-
         gameObject.GetComponent<PinataEffects>().Hit();
         m_PrevCollider = collider;
         m_Countdown = 1.0f;
+
+        if (GetComponent<PinataEffects>().IsBroken())
+        {
+            //Random direction
+            GameObject circle = GameObject.Find("Ring");
+            Vector3 dir = circle.transform.position - transform.position;
+            dir.Normalize();
+
+            int randX = Random.Range(25, 150);
+            int randY = Random.Range(300, 1000);
+            int randZ = Random.Range(25, 150);
+
+            //Fire some point pickups
+            GameObject pickup = Instantiate(m_PickupPrefab, new Vector3(transform.position.x, transform.position.y + 5.0f, transform.position.z), Quaternion.identity) as GameObject;
+
+            if (collider.gameObject.tag == "Shepherd") pickup.GetComponent<PickupBehaviour>().Type = PickupBehaviour.PickupType.Bark;
+            else pickup.GetComponent<PickupBehaviour>().Type = PickupBehaviour.PickupType.Cloud;
+
+            pickup.rigidbody.AddForce(new Vector3(dir.x * randX, randY, dir.z * randZ));
+        }
     }
 
 	public void Reset()
