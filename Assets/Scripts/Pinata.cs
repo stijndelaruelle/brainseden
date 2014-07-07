@@ -15,6 +15,9 @@ public class Pinata : MonoBehaviour
     private float m_RemoveDelay;
     private bool m_CanBeDestroyed;
 
+	public float DustSpawnTime = 1.0f;
+	private float _timer =0;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -65,6 +68,14 @@ public class Pinata : MonoBehaviour
 
     void Update()
     {
+		if(_timer>=0)
+		_timer+=Time.deltaTime;
+		if(_timer>DustSpawnTime)
+		{
+			transform.FindChild("DropDust").GetComponent<ParticleSystem>().Play();
+			_timer=-1;
+		}
+
         if (m_Countdown > 0.0f) 
             m_Countdown -= Time.deltaTime;
 
