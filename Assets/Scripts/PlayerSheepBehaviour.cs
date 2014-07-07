@@ -91,7 +91,12 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Shepherd") SoundManager.PlaySound("CoyoteBreathing");
+        if (collision.gameObject.tag == "Shepherd")
+        {
+            m_ScoreManager.AddScoreShepherd(100); //We lose
+            SoundManager.PlaySound("CoyoteBreathing");
+        }
+
         if (collision.gameObject.tag == "Terrain")  m_CanJump = true;
     }
 
