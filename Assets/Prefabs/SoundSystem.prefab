@@ -12,6 +12,11 @@ GameObject:
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400006}
+  - 114: {fileID: 11400008}
+  - 114: {fileID: 11400010}
+  - 114: {fileID: 11400012}
+  - 114: {fileID: 11400016}
+  - 114: {fileID: 11400014}
   m_Layer: 0
   m_Name: SoundSystem
   m_TagString: Untagged
@@ -99,6 +104,82 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9ab0273283b945d4eaf81fbfaa32ac2b, type: 3}
   - {fileID: 8300000, guid: 48d6a303f85fa7a48967ebb702683f52, type: 3}
   - {fileID: 8300000, guid: dd10a74f614b0b74bacbbb9a8c71a7cf, type: 3}
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97f30f3d2c48e184593a1f4e5b610c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SoundEventName: LamaTaunt
+  m_Sounds:
+  - {fileID: 8300000, guid: e094f267d5711e2478195b4c5db48700, type: 3}
+  - {fileID: 8300000, guid: 262500bbd42ec93489cbefc86b1ba9d0, type: 3}
+  - {fileID: 8300000, guid: 7943636fb770fb2478879654bcdf7756, type: 3}
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97f30f3d2c48e184593a1f4e5b610c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SoundEventName: CoyoteTaunt
+  m_Sounds:
+  - {fileID: 8300000, guid: 044e4929dec44c2449eb429c0ec90d33, type: 3}
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97f30f3d2c48e184593a1f4e5b610c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SoundEventName: SheepWin
+  m_Sounds:
+  - {fileID: 8300000, guid: a35b3ee7e83b6f5448715f8ebfde273c, type: 3}
+--- !u!114 &11400014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97f30f3d2c48e184593a1f4e5b610c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SoundEventName: Start
+  m_Sounds:
+  - {fileID: 8300000, guid: 31f46b45754a5054691f52b28c61a6b9, type: 3}
+--- !u!114 &11400016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97f30f3d2c48e184593a1f4e5b610c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SoundEventName: Footsteps
+  m_Sounds:
+  - {fileID: 8300000, guid: 4f9beb01c4222734bbb6ca8a2998b984, type: 3}
+  - {fileID: 8300000, guid: 175a4acb522297245b6032951b63a837, type: 3}
+  - {fileID: 8300000, guid: d6d16fa8c94b8564cbf59f34977db96b, type: 3}
+  - {fileID: 8300000, guid: 747eb0ae710de4645945b23a13938a17, type: 3}
+  - {fileID: 8300000, guid: c6f1504b537246842835565ea16b9ef3, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

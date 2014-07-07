@@ -46,6 +46,7 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
 	// Use this for initialization
 	void Start () 
 	{
+        SoundManager.PlaySound("Start", null, 1.0f);
         m_ScoreManager = GameObject.Find("Scorebar").GetComponent<ScoreManager>();
 	}
 	
@@ -106,7 +107,6 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
         if (collision.gameObject.tag == "Shepherd")
         {
             m_ScoreManager.AddScoreShepherd(100); //We lose
-            SoundManager.PlaySound("CoyoteBreathing");
         }
 
         if (collision.gameObject.tag == "Terrain")  m_CanJump = true;

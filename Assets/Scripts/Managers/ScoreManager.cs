@@ -153,8 +153,16 @@ public class ScoreManager : MonoBehaviour
         m_SheepIcon.enabled = false;
 
         //Depending on who won show the right image
-        if (ShepherdScore >= 100)   m_ShepherdVictory.enabled = true;
-        else                        m_SheepVictory.enabled = true;
+        if (ShepherdScore >= 100)
+        {
+            m_ShepherdVictory.enabled = true;
+            SoundManager.PlaySound("CoyoteTaunt", null, 1.0f);
+        }
+        else
+        {
+            m_SheepVictory.enabled = true;
+            SoundManager.PlaySound("SheepWin", null, 1.0f);
+        }
     }
 
     public void ShowSheepPickup()
