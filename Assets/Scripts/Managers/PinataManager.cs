@@ -49,7 +49,8 @@ public class PinataManager : MonoBehaviour
             return;
         int i = Random.Range(0, count);
         m_Pinata = GameObject.Instantiate(m_PinataGameObject, m_PinataSpawns[i].transform.position,
-            m_PinataGameObject.transform.rotation) as GameObject;
+            m_PinataSpawns[i].transform.rotation) as GameObject;
+        m_Pinata.transform.localScale = m_PinataSpawns[i].transform.localScale;
         m_Pinata.GetComponent<Pinata>().Reset();
     }
 
