@@ -54,8 +54,9 @@ public class Pinata : MonoBehaviour
         m_Countdown = 1.0f;
     }
 
-	void Reset()
+	public void Reset()
 	{
+	    Debug.Log("RESET");
 		gameObject.GetComponent<PinataEffects>().Reset();
 	}
 }
