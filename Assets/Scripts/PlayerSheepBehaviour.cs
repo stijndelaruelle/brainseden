@@ -50,6 +50,8 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
 	// Update is called once per frame
 	void Update () 
 	{
+        if (m_ScoreManager.Victory) return;
+
         //Move
         float horizontal = Input.GetAxis("Player2_Horizontal");
         float vertical = Input.GetAxis("Player2_Vertical");
@@ -72,6 +74,7 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
         //Use item
         if (Input.GetButtonDown("Player2_Fire") && m_Item != null)
         {
+            m_ScoreManager.HideSheepPickup();
             m_Item.Activate();
             m_Item = null;
         }
@@ -88,7 +91,12 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Shepherd") SoundManager.PlaySound("CoyoteBreathing");
+        if (collision.gameObject.tag == "Shepherd")
+        {
+            m_ScoreManager.AddScoreShepherd(100); //We lose
+            SoundManager.PlaySound("CoyoteBreathing");
+        }
+
         if (collision.gameObject.tag == "Terrain")  m_CanJump = true;
     }
 
@@ -118,10 +126,12 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
     public void SetItem(IItem item)
     {
         m_Item = item;
+        m_ScoreManager.ShowSheepPickup();
     }
 
     public void AddScore(int amount)
     {
         m_ScoreManager.AddScoreSheep(amount);
+
     }
 }

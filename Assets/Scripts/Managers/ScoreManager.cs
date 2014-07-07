@@ -15,20 +15,40 @@ public class ScoreManager : MonoBehaviour
         private set;
     }
 
+    public bool Victory
+    {
+        get;
+        private set;
+    }
+
     private int m_RogueSheep = 0;
     private float m_Timer = 1.0f;
 
+    private SpriteRenderer m_Border;
     private SpriteRenderer m_RedBar;
     private SpriteRenderer m_BlueBar;
     private SpriteRenderer m_ShepherdIcon;
     private SpriteRenderer m_SheepIcon;
 
+    private SpriteRenderer m_ShepherdVictory;
+    private SpriteRenderer m_SheepVictory;
+
+    private SpriteRenderer m_ShepherdPickup;
+    private SpriteRenderer m_SheepPickup;
+
 	void Start () 
 	{
+        m_Border = transform.Find("ProgressBar").GetComponent<SpriteRenderer>();
         m_RedBar = transform.Find("ProgressBarRed").GetComponent<SpriteRenderer>();
         m_BlueBar = transform.Find("ProgressBarBlue").GetComponent<SpriteRenderer>();
         m_ShepherdIcon = transform.Find("Icon_Coyote").GetComponent<SpriteRenderer>();
         m_SheepIcon = transform.Find("Icon_Lama").GetComponent<SpriteRenderer>();
+
+        m_ShepherdVictory = transform.Find("Victory_Coyote").GetComponent<SpriteRenderer>();
+        m_SheepVictory = transform.Find("Victory_Lamas").GetComponent<SpriteRenderer>();
+
+        m_ShepherdPickup = transform.Find("Face_Coyote").GetComponent<SpriteRenderer>();
+        m_SheepPickup = transform.Find("Face_Lama").GetComponent<SpriteRenderer>();
 
         ShepherdScore = 50;
         SheepScore = 50;
@@ -38,15 +58,25 @@ public class ScoreManager : MonoBehaviour
 
     void Update()
     {
-        if (m_Timer <= 0.0f)
+        if (Victory)
         {
-            if (m_RogueSheep > 0) AddScoreSheep(1);
-            else                  AddScoreShepherd(1);
-
-            m_Timer = 1.0f;
+            if (Input.GetButtonDown("Player1_Sprint") || Input.GetButtonDown("Player2_Sprint"))
+            {
+                Application.LoadLevel(1);
+            }
         }
+        else
+        {
+            if (m_Timer <= 0.0f)
+            {
+                if (m_RogueSheep > 0) AddScoreSheep(1 * m_RogueSheep);
+                else AddScoreShepherd(2);
 
-        m_Timer -= Time.deltaTime;
+                m_Timer = 1.0f;
+            }
+
+            m_Timer -= Time.deltaTime;
+        }
     }
 
     public void AddScoreShepherd(int amount)
@@ -58,7 +88,7 @@ public class ScoreManager : MonoBehaviour
 
         if (SheepScore <= 0)
         {
-            Debug.Log("Coyote wins!");
+            EndGame();
         }
         else CalculateBar();
     }
@@ -72,7 +102,7 @@ public class ScoreManager : MonoBehaviour
 
         if (ShepherdScore <= 0)
         {
-            Debug.Log("Lamas win!");
+            EndGame();
         }
         else CalculateBar();
     }
@@ -109,5 +139,41 @@ public class ScoreManager : MonoBehaviour
         //Move the icons
         m_ShepherdIcon.transform.localPosition = new Vector3(((ShepherdScore / 100.0f) * 8.6f) - 4.3f, 0.0f, -1.0f);
         m_SheepIcon.transform.localPosition = new Vector3(((ShepherdScore / 100.0f) * 8.6f) - 4.3f, 0.0f, -1.0f);
+    }
+
+    void EndGame()
+    {
+        Victory = true;
+
+        //Hide our bars
+        m_Border.enabled = false;
+        m_RedBar.enabled = false;
+        m_BlueBar.enabled = false;
+        m_ShepherdIcon.enabled = false;
+        m_SheepIcon.enabled = false;
+
+        //Depending on who won show the right image
+        if (ShepherdScore >= 100)   m_ShepherdVictory.enabled = true;
+        else                        m_SheepVictory.enabled = true;
+    }
+
+    public void ShowSheepPickup()
+    {
+        m_SheepPickup.enabled = true;
+    }
+
+    public void HideSheepPickup()
+    {
+        m_SheepPickup.enabled = false;
+    }
+
+    public void ShowShepherdPickup()
+    {
+        m_ShepherdPickup.enabled = true;
+    }
+
+    public void HideShepherdPickup()
+    {
+        m_ShepherdPickup.enabled = false;
     }
 }

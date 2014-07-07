@@ -173,6 +173,7 @@ public class SheepBehaviour : MonoBehaviour
         m_Herder = herder;
         m_Influenced = true;
         m_JumpTimer = 0;
+		transform.FindChild("Alert").GetComponent<ParticleSystem>().Play();
     }
 
     public void StopFlee()

@@ -27,6 +27,7 @@ GameObject:
   - 54: {fileID: 5400000}
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400000}
+  - 136: {fileID: 13600000}
   m_Layer: 8
   m_Name: Shepherd
   m_TagString: Shepherd
@@ -479,8 +480,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: .594012976, z: 0, w: .804455519}
+  m_LocalPosition: {x: -15.8990841, y: 0, z: -25.4963379}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 400000}
@@ -832,7 +833,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100056}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: 1.20334804, y: .921249866, z: .00896859169}
+  m_LocalPosition: {x: 1.77951407, y: .921249866, z: .00896828808}
   m_LocalScale: {x: .842031598, y: -.276897222, z: 1}
   m_Children: []
   m_Father: {fileID: 400052}
@@ -873,7 +874,7 @@ BoxCollider:
   m_GameObject: {fileID: 100002}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: .716249466, y: 1.55277944, z: 1.30644834}
   m_Center: {x: 9.53674316e-07, y: .780811191, z: .162819684}
@@ -982,6 +983,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &13600000
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .5
+  m_Height: 1.5
+  m_Direction: 1
+  m_Center: {x: 9.53674316e-07, y: .780811191, z: .162819698}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1189,10 +1203,10 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4279219199
+        rgba: 4278196991
       minMaxState: 0
     startSize:
-      scalar: .699999988
+      scalar: 1.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
