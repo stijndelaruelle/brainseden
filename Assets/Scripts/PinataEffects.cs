@@ -93,7 +93,8 @@ public class PinataEffects : MonoBehaviour
 	}
 
 	public void Reset()
-	{
+    {
+        _animator.SetBool("Remove", false);
 		_timer = 0;
 		_damageState= 2;
 		transform.FindChild("Pinata_Root").
@@ -103,4 +104,19 @@ public class PinataEffects : MonoBehaviour
 				FindChild("pinata").
 				FindChild("Doll").GetComponent<MeshFilter>().mesh=Full;
 	}
+
+    public void Fly()
+    {
+        _animator.SetBool("Remove",true);
+    }
+
+    public void StopFly()
+    {
+        _animator.SetBool("Remove", false);
+    }
+
+    public bool IsBroken()
+    {
+        return _damageState < 0;
+    }
 }
