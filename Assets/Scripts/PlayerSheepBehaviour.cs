@@ -74,6 +74,7 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
         //Use item
         if (Input.GetButtonDown("Player2_Fire") && m_Item != null)
         {
+            m_ScoreManager.HideSheepPickup();
             m_Item.Activate();
             m_Item = null;
         }
@@ -120,10 +121,12 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
     public void SetItem(IItem item)
     {
         m_Item = item;
+        m_ScoreManager.ShowSheepPickup();
     }
 
     public void AddScore(int amount)
     {
         m_ScoreManager.AddScoreSheep(amount);
+
     }
 }
