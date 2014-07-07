@@ -24,7 +24,7 @@ public class ButtonManager : MonoBehaviour
 	void Update () 
 	{
         //Submit
-        if (Input.GetButtonDown("Player1_Sprint"))
+        if (Input.GetButtonDown("Player1_Sprint") || Input.GetButtonDown("Player2_Sprint"))
         {
             m_Buttons[m_Selected].OnMouseDown();
         }
@@ -35,7 +35,7 @@ public class ButtonManager : MonoBehaviour
         }
 
         //Move up/down
-        float vertical = Input.GetAxis("Player1_Vertical");
+        float vertical = Input.GetAxis("MenuNav");
 
         if (Mathf.Abs(vertical) < 0.5f) m_HasMoved = false;
         
