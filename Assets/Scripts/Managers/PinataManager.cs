@@ -22,7 +22,6 @@ public class PinataManager : MonoBehaviour
 	    m_SpawnTimer -= Time.deltaTime;
 	    if (m_SpawnTimer <= 0)
 	    {
-	        Debug.Log("SPAWN");
 	        ResetTimer();
 	        SpawnRandomPinata();
 	    }
