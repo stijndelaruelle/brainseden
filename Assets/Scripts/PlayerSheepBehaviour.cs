@@ -76,8 +76,8 @@ public class PlayerSheepBehaviour : MonoBehaviour, IPlayer
             m_Item = null;
         }
 
-        if (Math.Abs(rigidbody.velocity.x + rigidbody.velocity.y) < 0.01f)
-        {
+        if (Math.Abs(horizontal + vertical) < 0.05f)
+		{
             GetComponentInChildren<Animator>().SetBool("IsWalking", false);
         }
         else
