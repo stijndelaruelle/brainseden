@@ -452,7 +452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BaseSpeed: 600
-  m_SprintSpeed: 1000
+  m_SprintSpeed: 1250
   m_JumpVelocity: 250
 --- !u!114 &11400002
 MonoBehaviour:

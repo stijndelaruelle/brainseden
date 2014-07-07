@@ -69,8 +69,10 @@ public class ScoreManager : MonoBehaviour
         {
             if (m_Timer <= 0.0f)
             {
-                if (m_RogueSheep > 0) AddScoreSheep(1 * m_RogueSheep);
-                else AddScoreShepherd(2);
+                if (m_RogueSheep > 0) 
+                    AddScoreSheep(Mathf.CeilToInt(m_RogueSheep/3.0f));
+                else 
+                    AddScoreShepherd(1);
 
                 m_Timer = 1.0f;
             }
