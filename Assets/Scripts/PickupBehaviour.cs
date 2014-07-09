@@ -20,8 +20,17 @@ public class PickupBehaviour : MonoBehaviour
     {
         IPlayer player = null;
 
-        if (collision.gameObject.tag == "Shepherd")     player = collision.gameObject.GetComponent<ShepherdBehaviour>() as IPlayer;
-        if (collision.gameObject.tag == "PlayerSheep")  player = collision.gameObject.GetComponent<PlayerSheepBehaviour>() as IPlayer;
+        if (collision.gameObject.tag == "Shepherd")
+        {
+            player = collision.gameObject.GetComponent<ShepherdBehaviour>() as IPlayer;
+            Type = PickupBehaviour.PickupType.Bark;
+        }
+
+        if (collision.gameObject.tag == "PlayerSheep")
+        {
+            player = collision.gameObject.GetComponent<PlayerSheepBehaviour>() as IPlayer;
+            Type = PickupBehaviour.PickupType.Cloud;
+        }
 
         if (player != null)
         {

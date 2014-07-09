@@ -70,7 +70,7 @@ public class ScoreManager : MonoBehaviour
             if (m_Timer <= 0.0f)
             {
                 if (m_RogueSheep > 0) 
-                    AddScoreSheep(Mathf.CeilToInt(m_RogueSheep/3.0f));
+                    AddScoreSheep(Mathf.CeilToInt(m_RogueSheep/4.0f));
                 else 
                     AddScoreShepherd(1);
 

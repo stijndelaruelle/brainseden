@@ -50,9 +50,6 @@ public class Pinata : MonoBehaviour
             //Fire some point pickups
             GameObject pickup = Instantiate(m_PickupPrefab, new Vector3(transform.position.x, transform.position.y + 5.0f, transform.position.z), Quaternion.identity) as GameObject;
 
-            if (collider.gameObject.tag == "Shepherd") pickup.GetComponent<PickupBehaviour>().Type = PickupBehaviour.PickupType.Bark;
-            else pickup.GetComponent<PickupBehaviour>().Type = PickupBehaviour.PickupType.Cloud;
-
             pickup.rigidbody.AddForce(new Vector3(dir.x * randX, randY, dir.z * randZ));
         }
     }

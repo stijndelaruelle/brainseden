@@ -8,7 +8,7 @@ public class BarkItem : IItem
 
     public bool OnPickup()
     {
-        Target.AddScore(5); //Taking the pickup gives you a bit of score
+        Target.AddScore(20); //Taking the pickup gives you a bit of score
         return true;
     }
 
